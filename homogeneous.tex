@@ -1,0 +1,174 @@
+ \documentclass[a4paper,10pt]{article}
+\usepackage{paper}
+\usepackage{hyperref}
+%\usepackage[notref,notcite,color]{showkeys}
+
+
+\def\thetitle{All-set-homogeneous spaces}
+\def\theauthors{Nina Lebedeva and Anton Petrunin}
+
+\hypersetup{colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black
+}
+
+\begin{document}
+
+%\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}
+
+
+\title{\thetitle}
+\author{\theauthors}
+\date{}
+\maketitle
+
+\begin{abstract}
+We give a classification of a certain subclass of all-set-homogeneous length spaces;
+a metric space is all-set-homogeneous if any of its partial isometries can be extended to a genuine isometry.
+\end{abstract}
+
+\section{Main result}
+
+A metric space $M$ is said to be \emph{all-set-homogeneous} if for any subset $A\subset M$ any distance-preserving map $A\to M$ can be extended to an isometry $M\to M$.
+
+Given a metric space $M$ and a positive integer $n$, consider all pseudometrics induced on $n$ points $x_1,\dots, x_n\in M$.
+Any such metric is completely described by $N=\tfrac{n\cdot (n-1)}2$ real numbers $|x_i-x_j|$ for $i<j$, so it can be encoded by a point in $\RR^N$.
+The set of all these points $F_n(M)\subset \RR^N$ will be called \emph{$n^\text{th}$ fingerprint} of~$M$.
+
+Let us denote by $\HH^m$ the hyperbolic space,
+$\EE^m$ --- Euclidean space, $\S^m$ --- unit sphere, $\RP^m$ --- projective space, all with standard metrics;
+here $m$ stands for the dimension of the space.
+
+Given a metric space $M$, we denote by $\lambda\cdot M$ the rescaled $M$ with factor $\lambda>0$.
+
+\begin{thm}{Theorem}\label{all-sets}
+Let $M$ be a complete all-set-homogeneous length space.
+Suppose that all fingerprints of $M$ are closed.
+Then $M$ is isometric to $\EE^m$, $\lambda\cdot \HH^m$, $\lambda\cdot\S^m$, or $\lambda\cdot\RP^m$ for some $\lambda>0$ and nonnegative integer $m$.
+\end{thm}
+
+The question about classifying all-set-homogeneous space was posted by Joseph O'Rourke \cite{rourke}.
+The locally compact case of the theorem is proven by Jacques Tits \cite{tits}.
+In this case, the condition on fingerprints is not needed.
+Moreover, the three-point-homogeneity is sufficient; that is, any distance preserving map defined on a subset with at most 3 points can be extended to an isometry.
+Our result shows that one can trade local compactness to a better type of homogeneity and closed fingerprints.
+
+\parit{Proof.}
+If $M$ is locally compact, then the statement follows from the result of Jacques Tits \cite{tits}.
+
+Assume $M$ is not locally compact.
+Then there is an infinite sequence of points $x_1,x_2,\dots$ such that 
+$\eps<|x_i-x_j|<1$ for some $\eps>0$.
+Applying the Ramsey theorem, we get that for arbitrary positive integer $n$ and $\delta>0$ there is a sequence $x_1,x_2,\dots,x_n$ such that 
+$|x_i-x_j|\lessgtr r\pm \delta$ where $\eps \le r\le 1$.
+Since the fingerprints are closed, there is an arbitrarily long sequence 
+$x_1,x_2,\dots,x_n$ such that 
+$|x_i\z-x_j|= r$ for some fixed $r>0$.
+
+Choose a maximal (with respect to inclusion) set of points $\{x_\alpha\}_{\alpha\in \mathcal{A}}$ such that $|x_\alpha-x_\beta|=r$ for any $\alpha\ne \beta$.
+Since $M$ is all-set-homogeneous, we can assume that $\mathcal{A}$ is infinite.
+In particular, there is an injective map $f\:\mathcal{A}\to\mathcal{A}$ such that $f(\mathcal{A})$ is a proper subset of $\mathcal{A}$.
+
+Note that the map $x_\alpha\mapsto x_{f(\alpha)}$ is distance preserving.
+Since $\{x_\alpha\}_{\alpha\in \mathcal{A}}$ is maximal, for any $y\notin \{x_\alpha\}_{\alpha\in \mathcal{A}}$ we have that $|y-x_\alpha|_M\ne r$ for some $\alpha$.
+It follows that a distance preserving map $M\to M$ that agrees with $x_\alpha\mapsto x_{f(\alpha)}$ cannot have in its image a point $x_\alpha$ for $\alpha\in \mathcal{A}\setminus f(\mathcal{A})$.
+In particular, no isometry $M\to M$ agrees with the map $x_\alpha\mapsto x_{f(\alpha)}$ --- a contradiction.
+\qeds
+
+\section{Example}
+
+Recall that for any cardinality $n\ge 2$ there is the so-called \emph{universal $\RR$-tree of valence $n$}; let us denote it by $\TT_n$.
+\begin{itemize}
+\item The space $\TT_n$ is a complete $\RR$-tree; in particular, $\TT_n$ is geodesic.
+\item $\TT_n$ is homogeneous; that is, the group of isometries acts transitively on $\TT_n$.
+\item The space $\TT_n$ is $n$-universal; that is, $\TT_n$ includes a copy of any $\RR$-tree of maximal valence at most $n$
+\end{itemize}
+
+An explicit construction of $\TT_n$ is given by Anna Dyubina (now Erschler) and Iosif Polterovich \cite{dyubina-polterovich}.
+Their proof of the universality of $\TT_n$ admits a straightforward modification that proves the following claim. 
+
+\begin{thm}{Claim}
+If $n$ is finite, then $\TT_n$ is all-set-homogeneous.
+\end{thm}
+
+The claim implies that the condition on fingerprints in the theorem is necessary.
+
+\parit{Proof.}
+Choose a subset $A\subset \TT_n$. 
+Let us extend any distance preserving map $f\:A\to \TT_n$ to a distance preserving map $\TT_n\to \TT_n$.
+
+Applying the Zorn lemma, we can assume that $A$ is maximal; that is, the domain of $f$ cannot be extended by a single point.
+Note that in this case, $A$ is a closed convex set in $\TT_n$; in particular, $A$ is an $\RR$-tree with maximal valence at most $n$.
+Suppose $A\ne \TT_n$, choose $a\in A$ and $b\notin A$. 
+Let $c\in A$ be the last point on the geodesic $[ab]_{\TT_n}$.
+Note that the valence of $c$ in $A$ is smaller than $n$.
+
+Let $c'=f(c)$; since $n$ is finite at least one of connected components $\TT_n\setminus \{c'\}$ does not intersect $A'=f(A)$.
+Choose a point $b'$ in this connected component on distance $|c-b|$ from $c'$.
+Observe that $f$ can be extended by $b\mapsto b'$ --- a contradiction.
+
+It remains to show that $f(\TT_n)=\TT_n$ for any distance-preserving map $f\:\TT_n\z\to \TT_n$.
+Assume the contrary; that is, $B=f(\TT_n)$ is a proper subset on $\TT_n$.
+Choose a point $c\in \partial B$; note that the valence of $c$ in $B$ is smaller than $n$ --- a contradiction.
+\qeds
+
+\section{Remarks}
+
+
+Let us list examples for related classification problems.
+We would be interested to see other examples or a proof that there are no more. 
+
+First of all, we do not see other examples of complete all-set-homogeneous length spaces except those listed in the theorem and the claim.
+
+The definition of all-set homogeneity can be restricted to the distance-preserving map with \emph{small} domains; for example, \emph{finite} or \emph{compact} domains.
+In these cases, we say that the space is \emph{finite-set-homogeneous} or \emph{compact-set-homogeneous} respectively.
+
+Examples of complete separable compact-set-homogeneous length spaces with closed fingerprints include the spaces listed in the theorem,
+plus the Urysohn space $\UU$ and its version $\UU_d$ of diameter $d$ (it is isometric to a sphere of radius $\tfrac d2$ in $\UU$).
+Without separability condition, the $\RR$-trees from the claim.
+
+For finite-set-homogeneous we get in addition infinite-dimensional analogs of the spaces in the theorem;
+in particular the Hilbert space.
+
+\parbf{Acknowledgments.}
+The second author want to thank Rostislav Matveyev for an interesting discussion on the Rubinstein Street. 
+
+The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070, 
+the second author was partially supported by the National Science Foundation grant DMS-2005279.
+
+{\sloppy
+\printbibliography[heading=bibintoc]
+\fussy
+}
+
+\end{document}
+
+
+\parit{Proof of lemma.}
+Let $M$ be a locally compact 2-point homogeneous complete length space;
+denote by $G$ its group of isometries.
+
+By the Hopf--Rinow theorem, $M$ is \emph{proper};
+that is a any closed bounded set in $M$ is compact.
+
+Let us choose a point $p\in M$.
+The topology on $G$ is defined by a sequence of pseudometrics $|\ -\ |_R$ on $G$ defined by
+\[|g-h|_R=\sup_{x\in \bar B[p,R]_M} \{|g(x)-h(x)|_M\}.\]
+Since the closed balls $\bar B[p,R]_M$ are compact, we get that $G$ is locally compact.
+
+Suppose $G$ is not a Lie group.
+By Gleason--Yamabe theorem, for any $\eps>0$ there is a small group $K$ ... is a normal subgroup in an open subgroup $G'<G$.
+
+Note that orbit $K\cdot x$ is nowhere dense in $G$; indeed...
+
+Further note that the open subgroup $G'$ has at most countable number of cosets in $G$.
+Therefore $G$ contains at most countable set $\{K_\alpha\}$ of subgroups that are conjugate to $K$.
+
+According to Bair theorem the union $X=\bigcup_\alpha K_\alpha\cdot x$ is nowhere dense in $M$.
+Therefore, given $x\in M$ we can choose $y,z\in M$ such that $|x-y|_M=|x-z|_M$, $y\in X$ and $z\notin X$.
+Observe that there is no element $g\in G$ such that $g(x)=x$ and $g(y)=z$ --- a contradiction.
+\qeds
