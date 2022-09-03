@@ -112,8 +112,11 @@ Choose a point $b'$ in this connected component on distance $|c-b|$ from $c'$.
 Observe that $f$ can be extended by $b\mapsto b'$ --- a contradiction.
 
 It remains to show that $f(\TT_n)=\TT_n$ for any distance-preserving map $f\:\TT_n\z\to \TT_n$.
-Assume the contrary; that is, $B=f(\TT_n)$ is a proper subset on $\TT_n$.
-Choose a point $c\in \partial B$; note that the valence of $c$ in $B$ is smaller than $n$ --- a contradiction.
+Assume the contrary; that is, $B=f(\TT_n)$ is a proper subset on $\TT_n$;
+choose $a\notin B$.
+Note that $B$ is a closed convex set in $\TT_n$.
+Let $b\in \partial B$ be the point that minimizes the distance to $a$.
+Observe that the valence of $b$ in $B$ is smaller than $n$ --- a contradiction.
 \qeds
 
 \section{Remarks}
@@ -129,7 +132,7 @@ In these cases, we say that the space is \emph{finite-set-homogeneous} or \emph{
 
 Examples of complete separable compact-set-homogeneous length spaces with closed fingerprints include the spaces listed in the theorem,
 plus the Urysohn space $\UU$ and its version $\UU_d$ of diameter $d$ (it is isometric to a sphere of radius $\tfrac d2$ in $\UU$).
-Without separability condition, the $\RR$-trees from the claim.
+(Without separability condition, we get in addition the $\RR$-trees from the claim.)
 
 For finite-set-homogeneous we get in addition infinite-dimensional analogs of the spaces in the theorem;
 in particular the Hilbert space.
@@ -137,8 +140,7 @@ in particular the Hilbert space.
 \parbf{Acknowledgments.}
 The second author wants to thank Rostislav Matveyev for an interesting discussion on the Rubinstein Street. 
 
-The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070, 
-the second author was partially supported by the National Science Foundation grant DMS-2005279.
+%The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070, the second author was partially supported by the National Science Foundation grant DMS-2005279.
 
 {\sloppy
 \printbibliography[heading=bibintoc]
