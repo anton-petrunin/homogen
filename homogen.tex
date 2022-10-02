@@ -1,0 +1,195 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{paper}
+\usepackage{hyperref}
+%\usepackage[notref,notcite,color]{showkeys}
+
+
+\def\thetitle{All-set-homogeneous spaces}
+\def\theauthors{Nina Lebedeva and Anton Petrunin}
+
+\hypersetup{colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black,
+pdftitle={\thetitle},
+pdfauthor={\theauthors}
+}
+
+%\overfullrule=100mm
+
+\begin{document}
+
+%\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}
+
+
+\title{\thetitle}
+\author{\theauthors}
+\date{}
+\maketitle
+
+\begin{abstract}
+A metric space is said to be all-set-homogeneous if any of its partial isometries can be extended to a genuine isometry.
+We give a classification of a certain subclass of all-set-homogeneous length spaces.
+\end{abstract}
+
+\section{Main result}
+
+A metric space $M$ is said to be \emph{all-set-homogeneous} if for any subset $A\subset M$ any distance-preserving map $A\to M$ can be extended to an isometry $M\to M$.
+
+Examples of all-set-homogeneous spaces include all \emph{classical spaces};
+these are complete simply-connected Rieamnnian maniflds.
+
+Nonclassical examples include the universal $\RR$-trees of finite valence;
+these are discussed in the next section.
+
+The following two results are closely related to our theorem; see also the survey by Semeon Bogatyi \cite{bogaty}.
+\begin{itemize}
+\item \emph{Any complete all-set-homogeneous geodesic space with locally unique nonbifurcating geodesics is classical;} it was proved by Garrett Birkhoff \cite{birkhoff}.
+\item \emph{Any locally compact three-point-homogeneous geodesic space is classical.}
+ This result was proved by Herbert Busemann \cite{busemann}; it also follows from the more general result of Jacques Tits \cite{tits} about two-point-homogeneous spaces.
+\end{itemize}
+
+
+Given a metric space $M$ and a positive integer $n$, consider all pseudometrics induced on $n$ points $x_1,\dots, x_n\in M$.
+Any such metric is completely described by $N=\tfrac{n\cdot (n-1)}2$ distances $|x_i-x_j|_M$ for $i<j$, so it can be encoded by a point in $\RR^N$.
+The set of all these points $F_n(M)\subset \RR^N$ will be called \emph{$n^\text{th}$ fingerprint} of~$M$.
+
+\begin{thm}{Theorem}\label{all-sets}
+Let $M$ be a complete all-set-homogeneous length space.
+Suppose that all fingerprints of $M$ are closed.
+Then $M$ is classical.
+\end{thm}
+
+\parit{Proof.}
+If $M$ is locally compact, then the statement follows from the result of Jacques Tits \cite{tits}.
+
+Assume $M$ is not locally compact.
+Then there is an infinite sequence of points $x_1,x_2,\dots$ such that 
+$\eps<|x_i-x_j|<1$ for some $\eps>0$.
+Applying the Ramsey theorem, we get that for arbitrary positive integer $n$ and $\delta>0$ there is a sequence $x_1,x_2,\dots,x_n$ such that 
+$|x_i-x_j|\lessgtr r\pm \delta$ where $\eps \le r\le 1$.
+Since the fingerprints are closed, there is an arbitrarily long sequence 
+$x_1,x_2,\dots,x_n$ such that 
+$|x_i\z-x_j|= r$ for some fixed $r>0$.
+
+Choose a maximal (with respect to inclusion) set of points $\{x_\alpha\}_{\alpha\in \mathcal{A}}$ such that $|x_\alpha-x_\beta|=r$ for any $\alpha\ne \beta$.
+Since $M$ is all-set-homogeneous, we can assume that $\mathcal{A}$ is infinite.
+In particular, there is an injective map $f\:\mathcal{A}\to\mathcal{A}$ such that $f(\mathcal{A})$ is a proper subset of $\mathcal{A}$.
+
+Note that the map $x_\alpha\mapsto x_{f(\alpha)}$ is distance preserving.
+Since $\{x_\alpha\}_{\alpha\in \mathcal{A}}$ is maximal, for any $y\notin \{x_\alpha\}_{\alpha\in \mathcal{A}}$ we have that $|y-x_\alpha|_M\ne r$ for some $\alpha$.
+It follows that a distance preserving map $M\to M$ that agrees with $x_\alpha\mapsto x_{f(\alpha)}$ cannot have in its image a point $x_\alpha$ for $\alpha\in \mathcal{A}\setminus f(\mathcal{A})$.
+In particular, no isometry $M\to M$ agrees with the map $x_\alpha\mapsto x_{f(\alpha)}$ --- a contradiction.
+\qeds
+
+\section{Example}
+
+For any cardinality $n\ge 2$ there is a uniquely defined up to isometry space $\TT_n$ that satisfies the following properties:
+\begin{itemize}
+\item The space $\TT_n$ is a complete $\RR$-tree; in particular, $\TT_n$ is geodesic.
+\item $\TT_n$ is homogeneous; that is, the group of isometries acts transitively on~$\TT_n$.
+\item The space $\TT_n$ is $n$-universal; that is, $\TT_n$ includes an isometric copy of any $\RR$-tree of maximal valence at most $n$. 
+\end{itemize}
+
+The space $\TT_n$ is called
+a \emph{universal $\RR$-tree of valence $n$}.
+An explicit construction of $\TT_n$ is given by Anna Dyubina and Iosif Polterovich~\cite{dyubina-polterovich}.
+Their proof of the universality of $\TT_n$ admits a straightforward modification that proves the following claim. 
+
+\begin{thm}{Claim}
+If $n$ is finite, then $\TT_n$ is all-set-homogeneous.
+\end{thm}
+
+Note that the claim implies that the condition on fingerprints in the theorem is necessary.
+In fact, if $n\ge 3$, then the $(n+1)^{\text{th}}$ fingerprint of $\TT_n$ is not closed --- $\TT_n$ does not contain $n+1$ points on distance 1 from each other,
+but it contains an arbitrarily large set with pairwise distances arbitrarily close to 1.
+
+
+\parit{Proof.}
+Let $f\:A\to \TT_n$ be a distance preserving map for some subset $A\subset \TT_n$.
+Let us extend $f$ to a distance preserving map $\TT_n\to \TT_n$.
+
+Applying the Zorn lemma, we can assume that $A$ is maximal; that is, the domain of $f$ cannot be extended by a single point.
+Note that in this case, $A$ is a closed convex set in $\TT_n$; in particular, $A$ is an $\RR$-tree with maximal valence at most $n$.
+
+Arguing by contradiction, suppose $A\ne \TT_n$, choose $a\in A$ and $b\notin A$. 
+Let $c\in A$ be the last point on the geodesic $[ab]_{\TT_n}$.
+Note that the valence of $c$ in $A$ is smaller than $n$.
+
+Let $c'=f(c)$; since $n$ is finite, at least one of connected components of $\TT_n\z\setminus \{c'\}$ does not intersect $A'=f(A)$.
+Choose a point $b'$ in this component such that $|c'-b'|_{\TT_n}=|c-b|_{\TT_n}$.
+Observe that $f$ can be extended by $b\mapsto b'$ --- a contradiction.
+
+It remains to show that $f(\TT_n)=\TT_n$ for any distance-preserving map $f\:\TT_n\z\to \TT_n$.
+Assume the contrary; that is, $B=f(\TT_n)$ is a proper subset on $\TT_n$.
+Note that $B$ is a closed convex set in $\TT_n$.
+Choose $a\in B$ and $b\not \in B$.
+Let $c\in B$ be the last point on the geodesic $[ab]_{\TT_n}$.
+Observe that the valence of $c$ in $B$ is smaller than $n$ --- a contradiction.
+\qeds
+
+\section{Remarks}
+
+
+Let us list examples for related classification problems.
+We would be interested to see other examples or a proof that there are no more. 
+
+First of all, we do not see other examples of complete all-set-homogeneous length spaces except those listed in the theorem and the claim.
+
+Without length-metric assumption, examples include finite discrete spaces, Cantor sets with natural ultrametrics, and many more spaces.
+
+The definition of all-set-homogeneous spaces can be restricted to the distance-preserving map with \emph{small} domains; for example, \emph{finite} or \emph{compact} domains.
+In these cases, we say that the space is \emph{finite-set-homogeneous} or \emph{compact-set-homogeneous} respectively.
+
+Examples of complete separable compact-set-homogeneous length spaces include the spaces listed in the theorem,
+plus the Urysohn spaces $\UU$ and $\UU_d$ (the space $\UU_d$ is isometric to a sphere of radius $\tfrac d2$ in $\UU$).
+Without the separability condition, we get in addition the $\RR$-trees from the claim.
+
+The finite-set-homogeneous spaces include, in addition, infinite-dimensional analogs of the spaces in the theorem;
+in particular the Hilbert space.  
+
+Let us also mention that finite-set homogeneity is closely related to the \emph{metric version of Fraïssé limit} introduced by Itay Ben-Yaacov \cite{ben-yaacov}. 
+
+\parbf{Acknowledgments.}
+This note is inspired by the question of Joseph O'Rourke \cite{rourke}.
+We want to thank James Hanson for his interesting and detailed comments to our question \cite{hanson}.
+The second author wants to thank Rostislav Matveyev for an interesting discussion on Rubinstein Street. 
+
+The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070, the second author was partially supported by the National Science Foundation grant DMS-2005279.
+
+{\sloppy
+\printbibliography[heading=bibintoc]
+\fussy
+}
+
+\end{document}
+
+
+\parit{Proof of lemma.}
+Let $M$ be a locally compact 2-point homogeneous complete length space;
+denote by $G$ its group of isometries.
+
+By the Hopf--Rinow theorem, $M$ is \emph{proper};
+that is a any closed bounded set in $M$ is compact.
+
+Let us choose a point $p\in M$.
+The topology on $G$ is defined by a sequence of pseudometrics $|\ -\ |_R$ on $G$ defined by
+\[|g-h|_R=\sup_{x\in \bar B[p,R]_M} \{|g(x)-h(x)|_M\}.\]
+Since the closed balls $\bar B[p,R]_M$ are compact, we get that $G$ is locally compact.
+
+Suppose $G$ is not a Lie group.
+By Gleason--Yamabe theorem, for any $\eps>0$ there is a small group $K$ ... is a normal subgroup in an open subgroup $G'<G$.
+
+Note that orbit $K\cdot x$ is nowhere dense in $G$; indeed...
+
+Further note that the open subgroup $G'$ has at most countable number of cosets in $G$.
+Therefore $G$ contains at most countable set $\{K_\alpha\}$ of subgroups that are conjugate to $K$.
+
+According to Bair theorem the union $X=\bigcup_\alpha K_\alpha\cdot x$ is nowhere dense in $M$.
+Therefore, given $x\in M$ we can choose $y,z\in M$ such that $|x-y|_M=|x-z|_M$, $y\in X$ and $z\notin X$.
+Observe that there is no element $g\in G$ such that $g(x)=x$ and $g(y)=z$ --- a contradiction.
+\qeds
+

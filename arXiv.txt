@@ -1,0 +1,4 @@
+homogen.tex
+homogen.bbl
+paper.sty
+library.bib
