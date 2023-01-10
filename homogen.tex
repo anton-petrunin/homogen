@@ -37,21 +37,26 @@ We give a classification of a certain subclass of all-set-homogeneous length spa
 
 \section{Main result}
 
+The distance between two points $x$ and $y$ in a metric space $M$ will be denoted by $|x-y|_M$.
+Recall that $M$ is called \emph{length} (or \emph{geodesic}) space if any two points $x,y\in M$ can be connected by a path $\gamma$ 
+such that $|x-y|_M$ is arbitrarily close to the length of $\gamma$ (or $|x-y|_M=\length\gamma$ respectively).
+Evidently, any geodesic space is a length space, but not the other way around.
+
 A metric space $M$ is said to be \emph{all-set-homogeneous} if for any subset $A\subset M$ any distance-preserving map $A\to M$ can be extended to an isometry $M\to M$.
 
-Examples of all-set-homogeneous spaces include all \emph{classical spaces};
-these are complete simply-connected Rieamnnian maniflds and the circles.
+Examples of geodesic all-set-homogeneous spaces include complete simply-connected Rieamnnian manifolds with constant curvature and the circle equipped with length metrics.
+These will be referred further as \emph{classical spaces};
+they are closely related to classical Euclidean/non-Euclidean geometry.
 
-Nonclassical examples include the universal $\RR$-trees of finite valence;
+It is worth mentioning that an infinite-dimensional Hilbert space is \emph{not} all-set-homogeneous;
+indeed, it is isometric to its proper subset.
+Also, for $n\ge2$, the real projective space $\RP^n$ with canonical metric is not all-set-homogeneous.
+Indeed, it contains two isometric but noncongruent triples of points with pairwise distance $\tfrac\pi3$
+(we assume that a closed geodesic on $\RP^n$ has length $\pi$);
+one triple lies on a closed geodesic and another does not. 
+
+Nonclassical examples include the universal metric trees of finite valence;
 these are discussed in the next section.
-
-The following two results are closely related to our theorem; see also the survey by Semeon Bogatyi \cite{bogaty}.
-\begin{itemize}
-\item \emph{Any complete all-set-homogeneous geodesic space with locally unique nonbifurcating geodesics is classical;} it was proved by Garrett Birkhoff \cite{birkhoff}.
-\item \emph{Any locally compact three-point-homogeneous geodesic space is classical.}
- This result was proved by Herbert Busemann \cite{busemann}; it also follows from the more general result of Jacques Tits \cite{tits} about two-point-homogeneous spaces.
-\end{itemize}
-
 
 Given a metric space $M$ and a positive integer $n$, consider all pseudometrics induced on $n$ points $x_1,\dots, x_n\in M$.
 Any such metric is completely described by $N=\tfrac{n\cdot (n-1)}2$ distances $|x_i-x_j|_M$ for $i<j$, so it can be encoded by a point in $\RR^N$.
@@ -63,39 +68,50 @@ Suppose that all fingerprints of $M$ are closed.
 Then $M$ is classical.
 \end{thm}
 
+The following two results are closely related to our theorem.
+\begin{itemize}
+\item \emph{Any complete all-set-homogeneous geodesic space with locally unique nonbifurcating geodesics is classical;} it was proved by Garrett Birkhoff \cite{birkhoff}.
+\item \emph{Any locally compact three-point-homogeneous length space is classical.}
+ This result was proved by Herbert Busemann \cite{busemann}; it also follows from the more general result of Jacques Tits \cite{tits} about two-point-homogeneous spaces.
+\end{itemize}
+For more related results, see the survey by Semeon Bogatyi \cite{bogaty} and the references therein.
+
 \parit{Proof.}
-If $M$ is locally compact, then the statement follows from the result of Jacques Tits \cite{tits}.
+If $M$ is locally compact, then the statement follows from the Busemann--Tits result stated above.
 
 Assume $M$ is not locally compact.
 Then there is an infinite sequence of points $x_1,x_2,\dots$ such that 
-$\eps<|x_i-x_j|<1$ for some $\eps>0$.
-Applying the Ramsey theorem, we get that for arbitrary positive integer $n$ and $\delta>0$ there is a sequence $x_1,x_2,\dots,x_n$ such that 
-$|x_i-x_j|\lessgtr r\pm \delta$ where $\eps \le r\le 1$.
+$\eps<|x_i-x_j|_M<1$ for some $\eps>0$.
+Applying the Ramsey theorem, we get that for arbitrary positive integer $n$ there is a sequence $x_1,x_2,\dots,x_n$ such that all the distances
+$|x_i-x_j|_M$ lie in arbitrarily small subinterval of $(\eps,1)$.
 Since the fingerprints are closed, there is an arbitrarily long sequence 
 $x_1,x_2,\dots,x_n$ such that 
-$|x_i\z-x_j|= r$ for some fixed $r>0$.
+$|x_i\z-x_j|_M= r$ for some fixed $r>0$.
 
-Choose a maximal (with respect to inclusion) set of points $\{x_\alpha\}_{\alpha\in \mathcal{A}}$ such that $|x_\alpha-x_\beta|=r$ for any $\alpha\ne \beta$.
-Since $M$ is all-set-homogeneous, we can assume that $\mathcal{A}$ is infinite.
-In particular, there is an injective map $f\:\mathcal{A}\to\mathcal{A}$ such that $f(\mathcal{A})$ is a proper subset of $\mathcal{A}$.
+Choose a maximal (with respect to inclusion) set of points $A$ with distance $r$ between any pair.
+Since $M$ is all-set-homogeneous, we get that $A$ has to be infinite.
+In particular, there is a map $f\:A\to A$ that is injective, but not surjective.
 
-Note that the map $x_\alpha\mapsto x_{f(\alpha)}$ is distance preserving.
-Since $\{x_\alpha\}_{\alpha\in \mathcal{A}}$ is maximal, for any $y\notin \{x_\alpha\}_{\alpha\in \mathcal{A}}$ we have that $|y-x_\alpha|_M\ne r$ for some $\alpha$.
-It follows that a distance preserving map $M\to M$ that agrees with $x_\alpha\mapsto x_{f(\alpha)}$ cannot have in its image a point $x_\alpha$ for $\alpha\in \mathcal{A}\setminus f(\mathcal{A})$.
-In particular, no isometry $M\to M$ agrees with the map $x_\alpha\mapsto x_{f(\alpha)}$ --- a contradiction.
+Note that $f$ is distance-preserving.
+Since $A$ is maximal, for any $y\notin A$ we have that $|y-x|_M\ne r$ for some $x\in A$.
+It follows that a distance-preserving map $M\to M$ that agrees with $f$ cannot have points of $A\setminus f(A)$ in its image.
+In particular, no isometry $M\to M$ agrees with the map $f$ --- a contradiction.
 \qeds
 
 \section{Example}
 
-For any cardinality $n\ge 2$ there is a uniquely defined up to isometry space $\TT_n$ that satisfies the following properties:
+Recall that geodesic space $T$ is called a \emph{metric tree} if any pair of points $x,y\in T$ are connected by a unique geodesic $[xy]_T$,
+and the union of any two geodesics $[xy]_T$, and $[yz]_T$ contains the geodesic $[xz]_T$.
+
+It is known that for any cardinality $n\ge 2$, there is a space $\TT_n$ that satisfies the following properties:
 \begin{itemize}
-\item The space $\TT_n$ is a complete $\RR$-tree; in particular, $\TT_n$ is geodesic.
-\item $\TT_n$ is homogeneous; that is, the group of isometries acts transitively on~$\TT_n$.
-\item The space $\TT_n$ is $n$-universal; that is, $\TT_n$ includes an isometric copy of any $\RR$-tree of maximal valence at most $n$. 
+\item The space $\TT_n$ is a complete metric tree with valence $n$ at any point.
+\item $\TT_n$ is homogeneous; that is, the group of isometries acts transitively on~$\TT_n$. 
 \end{itemize}
+Moreover, this space is uniquely defined up to isometry and $n$-universal; the latter means that $\TT_n$ includes an isometric copy of any metric tree of maximal valence at most $n$.
 
 The space $\TT_n$ is called
-a \emph{universal $\RR$-tree of valence $n$}.
+a \emph{universal metric tree of valence $n$}.
 An explicit construction of $\TT_n$ is given by Anna Dyubina and Iosif Polterovich~\cite{dyubina-polterovich}.
 Their proof of the universality of $\TT_n$ admits a straightforward modification that proves the following claim. 
 
@@ -109,46 +125,62 @@ but it contains an arbitrarily large set with pairwise distances arbitrarily clo
 
 
 \parit{Proof.}
-Let $f\:A\to \TT_n$ be a distance preserving map for some subset $A\subset \TT_n$.
-Let us extend $f$ to a distance preserving map $\TT_n\to \TT_n$.
+Let $A\subset \TT_n$ and $x\mapsto x'$ be a distance-preserving map $A\to \TT_n$;
+denote by $A'$ its image.
+Let us show that it can be extended to a distance-preserving map $\TT_n\to \TT_n$.
 
-Applying the Zorn lemma, we can assume that $A$ is maximal; that is, the domain of $f$ cannot be extended by a single point.
-Note that in this case, $A$ is a closed convex set in $\TT_n$; in particular, $A$ is an $\RR$-tree with maximal valence at most $n$.
+Applying the Zorn lemma, we can assume that $A$ is maximal; that is, the domain $A$ cannot be extended by a single point.
+It remains to show that $A=\TT_n$ and $A'=\TT_n$.
+
+Note that $A$ is closed.
+Further, suppose $x,y,z\in A$ and $s\in [yz]_{\TT_n}$.
+Since $\TT_n$ is a metric tree, the distance $|x-s|_{\TT_n}$ is completely determined by four values $|x-y|_{\TT_n}$, $|x-z|_{\TT_n}$, $|s-y|_{\TT_n}$, $|s-z|_{\TT_n}$.
+
+Denote by $s'$ the point on the geodesic $[y'z']_{\TT_n}$ such that $|y'-s'|_{\TT_n}\z=|y-s|_{\TT_n}$ and therefore $|z'-s'|_{\TT_n}=|z-s|_{\TT_n}$.
+Since the map preserves distances $|x-y|_{\TT_n}$ and $|x-z|_{\TT_n}$, we get $|s'-x'|_{\TT_n}=|s-x|_{\TT_n}$;
+that is, the extension of the map by $s\mapsto s'$ is still distance-preserving.
+
+Since $A$ is maximal, $s\in A$.
+In other words, $A$ is a convex subset of $\TT_n$;
+in particular, $A$ is a metric tree with maximal valence at most~$n$.
 
 Arguing by contradiction, suppose $A\ne \TT_n$, choose $a\in A$ and $b\notin A$. 
 Let $c\in A$ be the last point on the geodesic $[ab]_{\TT_n}$.
 Note that the valence of $c$ in $A$ is smaller than $n$.
 
-Let $c'=f(c)$; since $n$ is finite, at least one of connected components of $\TT_n\z\setminus \{c'\}$ does not intersect $A'=f(A)$.
+Since $n$ is finite, at least one of the connected components in $\TT_n\z\setminus \{c'\}$ does not intersect $A'$.
 Choose a point $b'$ in this component such that $|c'-b'|_{\TT_n}=|c-b|_{\TT_n}$.
-Observe that $f$ can be extended by $b\mapsto b'$ --- a contradiction.
+Observe that the map can be extended by $b\mapsto b'$ --- a contradiction.
+It follows that $A=\TT_n$.
 
-It remains to show that $f(\TT_n)=\TT_n$ for any distance-preserving map $f\:\TT_n\z\to \TT_n$.
-Assume the contrary; that is, $B=f(\TT_n)$ is a proper subset on $\TT_n$.
-Note that $B$ is a closed convex set in $\TT_n$.
-Choose $a\in B$ and $b\not \in B$.
-Let $c\in B$ be the last point on the geodesic $[ab]_{\TT_n}$.
-Observe that the valence of $c$ in $B$ is smaller than $n$ --- a contradiction.
+It remains to show that $A'=\TT_n$.
+Note that $A'$ is a closed convex set in $\TT_n$ that is isometric to $\TT_n$.
+Assume $A'$ is a proper subset of $\TT_n$.
+Choose $a'\in A'$ and $b'\notin A'$.
+Let $c'\in A'$ be the last point on the geodesic $[a'b']_{\TT_n}$.
+Observe that the valence of $c'$ in $A'$ is smaller than $n$ --- a contradiction.
 \qeds
 
 \section{Remarks}
 
 
 Let us list examples for related classification problems.
-We would be interested to see other examples or a proof that there are no more. 
+We would like to see any other example or a proof of the corresponding classification. 
 
 First of all, we do not see other examples of complete all-set-homogeneous length spaces except those listed in the theorem and the claim.
 
-Without length-metric assumption, examples include finite discrete spaces, Cantor sets with natural ultrametrics, and many more spaces.
+Without length-metric assumption, we have a vast amount of examples.
+It includes finite discrete spaces, Cantor sets with natural ultrametrics;
+also note that snowflaking $(X,|\ -\ |^\theta)$ of any all-set-homogeneous spaces $(X,|\ -\ |)$ is all-set-homogeneous.
 
 The definition of all-set-homogeneous spaces can be restricted to the distance-preserving map with \emph{small} domains; for example, \emph{finite} or \emph{compact} domains.
 In these cases, we say that the space is \emph{finite-set-homogeneous} or \emph{compact-set-homogeneous} respectively.
 
 Examples of complete separable compact-set-homogeneous length spaces include the spaces listed in the theorem,
 plus the Urysohn spaces $\UU$ and $\UU_d$ (the space $\UU_d$ is isometric to a sphere of radius $\tfrac d2$ in $\UU$).
-Without the separability condition, we get in addition the $\RR$-trees from the claim.
+Without the separability condition, we get in addition the metric trees from the claim.
 
-The finite-set-homogeneous spaces include, in addition, infinite-dimensional analogs of the spaces in the theorem;
+The finite-set-homogeneous spaces include, in addition, infinite-dimensional analogs of the classical spaces;
 in particular the Hilbert space.  
 
 Let us also mention that finite-set homogeneity is closely related to the \emph{metric version of Fraïssé limit} introduced by Itay Ben-Yaacov \cite{ben-yaacov}. 
@@ -158,7 +190,7 @@ This note is inspired by the question of Joseph O'Rourke \cite{rourke}.
 We want to thank James Hanson for his interesting and detailed comments to our question \cite{hanson}.
 The second author wants to thank Rostislav Matveyev for an interesting discussion on Rubinstein Street. 
 
-The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070, the second author was partially supported by the National Science Foundation grant DMS-2005279.
+The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070; the second author was partially supported by the National Science Foundation grant DMS-2005279.
 
 {\sloppy
 \printbibliography[heading=bibintoc]
