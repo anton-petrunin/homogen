@@ -1,4 +1,8 @@
-homogen.tex
-homogen.bbl
-paper.sty
+homogen-en.tex
+homogen-en.bbl
+paper-en.sty
+homogen-ru.tex
+homogen-ru.bbl
+paper-ru.sty
 library.bib
+mppics/pic-10.eps

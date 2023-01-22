@@ -20,5 +20,11 @@ lib/*
 *.kilepr
 *.mps
 *.mpx
+*.pdf
+*.txt
+*.fls
+*latexmk
+*.tar
+*.eps
 *mptextmp.mp
 *mpxerr.tex
