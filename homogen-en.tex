@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage{paper}
+\usepackage{paper-en}
 \usepackage{hyperref}
 %\usepackage[notref,notcite,color]{showkeys}
 
@@ -31,7 +31,7 @@ pdfauthor={\theauthors}
 \maketitle
 
 \begin{abstract}
-A metric space is said to be all-set-homogeneous if any of its partial isometries can be extended to a genuine isometry.
+A metric space is said to be all-set-homogeneous if any isometry between its subsets can be extended to an isometry of the whole space.
 We give a classification of a certain subclass of all-set-homogeneous length spaces.
 \end{abstract}
 
@@ -42,9 +42,10 @@ Recall that $M$ is called \emph{length} (or \emph{geodesic}) space if any two po
 such that $|x-y|_M$ is arbitrarily close to the length of $\gamma$ (or $|x-y|_M=\length\gamma$ respectively).
 Evidently, any geodesic space is a length space, but not the other way around.
 
-A metric space $M$ is said to be \emph{all-set-homogeneous} if for any subset $A\subset M$ any distance-preserving map $A\to M$ can be extended to an isometry $M\to M$.
+A metric space $M$ is said to be \emph{all-set-homogeneous} 
+if any isometry $A\to A'$ between its subsets can be extended to an isometry of the whole space $M\to M$.
 
-Examples of geodesic all-set-homogeneous spaces include complete simply-connected Rieamnnian manifolds with constant curvature and the circle equipped with length metrics.
+Examples of geodesic all-set-homogeneous spaces include complete simply-connected Riemannian manifolds with constant curvature and the circle equipped with length metrics.
 These will be referred further as \emph{classical spaces};
 they are closely related to classical Euclidean/non-Euclidean geometry.
 
@@ -73,17 +74,18 @@ The following two results are closely related to our theorem.
 \item \emph{Any complete all-set-homogeneous geodesic space with locally unique nonbifurcating geodesics is classical;} it was proved by Garrett Birkhoff \cite{birkhoff}.
 \item \emph{Any locally compact three-point-homogeneous length space is classical.}
  This result was proved by Herbert Busemann \cite{busemann}; it also follows from the more general result of Jacques Tits \cite{tits} about two-point-homogeneous spaces.
+ (A space is called $n$-point homogeneous if any isometry between its subsets with at most $n$ points in each can be extended to an isometry of the whole space.)
 \end{itemize}
 For more related results, see the survey by Semeon Bogatyi \cite{bogaty} and the references therein.
 
 \parit{Proof.}
 If $M$ is locally compact, then the statement follows from the Busemann--Tits result stated above.
+Therefore, we can assume that $M$ is not locally compact.
 
-Assume $M$ is not locally compact.
-Then there is an infinite sequence of points $x_1,x_2,\dots$ such that 
-$\eps<|x_i-x_j|_M<1$ for some $\eps>0$.
+In this case, there is an infinite sequence of points $x_1,x_2,\dots$ such that 
+$\eps<|x_i-x_j|_M<1$ for some fixed $\eps>0$ and all $i\ne j$.
 Applying the Ramsey theorem, we get that for arbitrary positive integer $n$ there is a sequence $x_1,x_2,\dots,x_n$ such that all the distances
-$|x_i-x_j|_M$ lie in arbitrarily small subinterval of $(\eps,1)$.
+$|x_i-x_j|_M$ lie in an arbitrarily small subinterval of $(\eps,1)$.
 Since the fingerprints are closed, there is an arbitrarily long sequence 
 $x_1,x_2,\dots,x_n$ such that 
 $|x_i\z-x_j|_M= r$ for some fixed $r>0$.
@@ -101,12 +103,13 @@ In particular, no isometry $M\to M$ agrees with the map $f$ --- a contradiction.
 \section{Example}
 
 Recall that geodesic space $T$ is called a \emph{metric tree} if any pair of points $x,y\in T$ are connected by a unique geodesic $[xy]_T$,
-and the union of any two geodesics $[xy]_T$, and $[yz]_T$ contains the geodesic $[xz]_T$.
+and the union of any two geodesics $[xy]_T$, and $[yz]_T$ contains $[xz]_T$.
+The \emph{valence} of $x\in T$ is defined as the cardinality of connected components in $T\setminus \{x\}$.
 
 It is known that for any cardinality $n\ge 2$, there is a space $\TT_n$ that satisfies the following properties:
 \begin{itemize}
 \item The space $\TT_n$ is a complete metric tree with valence $n$ at any point.
-\item $\TT_n$ is homogeneous; that is, the group of isometries acts transitively on~$\TT_n$. 
+\item $\TT_n$ is homogeneous; that is, its group of isometries acts transitively. 
 \end{itemize}
 Moreover, this space is uniquely defined up to isometry and $n$-universal; the latter means that $\TT_n$ includes an isometric copy of any metric tree of maximal valence at most $n$.
 
@@ -125,14 +128,12 @@ but it contains an arbitrarily large set with pairwise distances arbitrarily clo
 
 
 \parit{Proof.}
-Let $A\subset \TT_n$ and $x\mapsto x'$ be a distance-preserving map $A\to \TT_n$;
-denote by $A'$ its image.
-Let us show that it can be extended to a distance-preserving map $\TT_n\to \TT_n$.
-
+Let $A, A'\subset \TT_n$ and $x\mapsto x'$ be an isometry $A\to A'$.
 Applying the Zorn lemma, we can assume that $A$ is maximal; that is, the domain $A$ cannot be extended by a single point.
 It remains to show that $A=\TT_n$ and $A'=\TT_n$.
 
 Note that $A$ is closed.
+
 Further, suppose $x,y,z\in A$ and $s\in [yz]_{\TT_n}$.
 Since $\TT_n$ is a metric tree, the distance $|x-s|_{\TT_n}$ is completely determined by four values $|x-y|_{\TT_n}$, $|x-z|_{\TT_n}$, $|s-y|_{\TT_n}$, $|s-z|_{\TT_n}$.
 
@@ -155,6 +156,8 @@ It follows that $A=\TT_n$.
 
 It remains to show that $A'=\TT_n$.
 Note that $A'$ is a closed convex set in $\TT_n$ that is isometric to $\TT_n$.
+In particular valence of any point in $A'$ is $n$.
+
 Assume $A'$ is a proper subset of $\TT_n$.
 Choose $a'\in A'$ and $b'\notin A'$.
 Let $c'\in A'$ be the last point on the geodesic $[a'b']_{\TT_n}$.
@@ -173,7 +176,7 @@ Without length-metric assumption, we have a vast amount of examples.
 It includes finite discrete spaces, Cantor sets with natural ultrametrics;
 also note that snowflaking $(X,|\ -\ |^\theta)$ of any all-set-homogeneous spaces $(X,|\ -\ |)$ is all-set-homogeneous.
 
-The definition of all-set-homogeneous spaces can be restricted to the distance-preserving map with \emph{small} domains; for example, \emph{finite} or \emph{compact} domains.
+The definition of all-set-homogeneous spaces can be restricted to \emph{small} subsets $A$ and $A'$; for example, \emph{finite} or \emph{compact}.
 In these cases, we say that the space is \emph{finite-set-homogeneous} or \emph{compact-set-homogeneous} respectively.
 
 Examples of complete separable compact-set-homogeneous length spaces include the spaces listed in the theorem,
@@ -183,11 +186,11 @@ Without the separability condition, we get in addition the metric trees from the
 The finite-set-homogeneous spaces include, in addition, infinite-dimensional analogs of the classical spaces;
 in particular the Hilbert space.  
 
-Let us also mention that finite-set homogeneity is closely related to the \emph{metric version of Fraïssé limit} introduced by Itay Ben-Yaacov \cite{ben-yaacov}. 
+Let us also mention that finite-set homogeneity is closely related to the \emph{metric version of Fraïssé limit} introduced by Itay Ben Yaacov \cite{ben-yaacov}. 
 
 \parbf{Acknowledgments.}
 This note is inspired by the question of Joseph O'Rourke \cite{rourke}.
-We want to thank James Hanson for his interesting and detailed comments to our question \cite{hanson}.
+We want to thank James Hanson for his interesting and detailed comments on our question \cite{hanson}.
 The second author wants to thank Rostislav Matveyev for an interesting discussion on Rubinstein Street. 
 
 The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070; the second author was partially supported by the National Science Foundation grant DMS-2005279.
