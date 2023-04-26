@@ -142,7 +142,7 @@ $|x-y|_{\TT_n}$, $|x-z|_{\TT_n}$, $|s-y|_{\TT_n}$, $|s-z|_{\TT_n}$.
 Обозначим через $s'$ точку на кратчайшей $[y'z']_{\TT_n}$ такую, что $|y'-s'|_{\TT_n}\z=|y-s|_{\TT_n}$, и значит $|z'-s'|_{\TT_n}=|z-s|_{\TT_n}$.
 Поскольку отображение сохраняет расстояния $|x-y|_{\TT_n}$ и $|x-z|_{\TT_n}$,
 получаем, что $|s'-x'|_{\TT_n}=|s-x|_{\TT_n}$.
-То есть отображения продолженное как $s\mapsto s'$ остаётся сохраняющим расстояния.
+То есть отображение продолженное как $s\mapsto s'$ остаётся сохраняющим расстояния.
 
 Поскольку $A$ максимально, $s\in A$.
 Другими словами, $A$ --- выпуклое подмножество в $\TT_n$.
@@ -198,7 +198,8 @@ $|x-y|_{\TT_n}$, $|x-z|_{\TT_n}$, $|s-y|_{\TT_n}$, $|s-z|_{\TT_n}$.
 Второй автор признателен Ростиславу Матвееву за интересный разговор на улице Рубинштейна.
 
 Первый автор частично поддержан грантом РФФИ 20-01-00070;
-второй автор частично поддержан грантом NSF DMS-2005279.
+второй автор частично поддержан грантом NSF DMS-2005279
+и грантом Минобрнауки 075-15-2022-289.
 
 {\sloppy
 \printbibliography[heading=bibintoc]
@@ -208,28 +209,4 @@ $|x-y|_{\TT_n}$, $|x-z|_{\TT_n}$, $|s-y|_{\TT_n}$, $|s-z|_{\TT_n}$.
 \end{document}
 
 
-\parit{Proof of lemma.}
-Let $M$ be a locally compact 2-point homogeneous complete length space;
-denote by $G$ its group of isometries.
-
-By the Hopf--Rinow theorem, $M$ is \emph{proper};
-that is a any closed bounded set in $M$ is compact.
-
-Let us choose a point $p\in M$.
-The topology on $G$ is defined by a sequence of pseudometrics $|\ -\ |_R$ on $G$ defined by
-\[|g-h|_R=\sup_{x\in \bar B[p,R]_M} \{|g(x)-h(x)|_M\}.\]
-Since the closed balls $\bar B[p,R]_M$ are compact, we get that $G$ is locally compact.
-
-Suppose $G$ is not a Lie group.
-By Gleason--Yamabe theorem, for any $\eps>0$ there is a small group $K$ ... is a normal subgroup in an open subgroup $G'<G$.
-
-Note that orbit $K\cdot x$ is nowhere dense in $G$; indeed...
-
-Further note that the open subgroup $G'$ has at most countable number of cosets in $G$.
-Therefore $G$ contains at most countable set $\{K_\alpha\}$ of subgroups that are conjugate to $K$.
-
-According to Bair theorem the union $X=\bigcup_\alpha K_\alpha\cdot x$ is nowhere dense in $M$.
-Therefore, given $x\in M$ we can choose $y,z\in M$ such that $|x-y|_M=|x-z|_M$, $y\in X$ and $z\notin X$.
-Observe that there is no element $g\in G$ such that $g(x)=x$ and $g(y)=z$ --- a contradiction.
-\qeds
 
