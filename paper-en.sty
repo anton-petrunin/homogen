@@ -107,6 +107,7 @@ isbn=false]{biblatex}
 \def\T{\mathrm{T}}
 \def\K{\mathrm{K}}
 \def\L{\mathrm{L}}
+\def\spc{\mathcal}
 \def\df{\mathrel{{:}{=}}}
 \def\parit#1{\medskip\noindent{\it #1}}
 \def\parbf#1{\medskip\noindent{\bf #1}}
@@ -121,11 +122,13 @@ isbn=false]{biblatex}
 \def\i{\subset}
 \def\vr{\overrightarrow}
 \def\length{\mathop{\rm length}\nolimits}
-\newcommand*{\set}[2]{\l\{\,\l.{#1}\vphantom{#2}\,\r|\,{#2}\,\r\}}
+\newcommand*{\set}[2]{\left\{\,\left.{#1}\vphantom{#2}\,\right|\,{#2}\,\right\}}
 \def\:{\colon}
 \def\acts{\curvearrowright}
 \def\id{\mathrm{id}}
 \renewcommand*\vec[1]{\text{\sc{#1}}}
+\newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}
+\def\split{\operatorname{\rm split}}
 
 %LIST STILES
 \renewcommand{\@listI}{%

@@ -1,0 +1,186 @@
+\documentclass[leqno,a4paper,10pt]{article}
+\usepackage[a-3b]{pdfx}
+\usepackage{paper-en}
+\usepackage{hyperref}
+%\usepackage[notref,notcite,color]{showkeys}
+
+
+\def\thetitle{All-set-homogeneous uniquely geodesic spaces}
+\def\theauthors{Nina Lebedeva and Anton Petrunin}
+
+\hypersetup{colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black,
+pdftitle={\thetitle},
+pdfauthor={\theauthors}
+}
+
+%\overfullrule=100mm
+
+\begin{document}
+
+\title{\thetitle}
+\author{\theauthors}
+\date{}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+A metric space is said to be \emph{all-set-homogeneous}
+if any isometry between its subsets can be extended to an isometry of the whole space.
+
+Examples of all-set-homogeneous spaces include complete simply-connected Riemannian manifolds with constant curvature and the circles with length metrics.
+These will be referred further as \emph{classical spaces}.
+
+Garrett Birkhoff proved that \emph{any all-set-homogeneous geodesic space with locally unique nonbifurcating geodesics is classical} \cite{birkhoff};
+here we use the following terminology:
+\begin{itemize}
+\item A metric space $M$ is \emph{geodesic} if any two points $x,y\in M$ can be connected by a \emph{geodesic};
+that is, there is a subset $[xy]_M\ni x,y$ that is isometric to a line segment of length $|x-y|_M$ (here $|x-y|_M$ denotes distance between $x$ and $y$ in $M$);
+\item If any point $p\in M$ admits a neighborhood $U$ such that the set $[xy]_M$ is uniquely defined for any $x,y\in U$, then $M$ has \emph{locally unique geodesics};
+\item If $[px]_M\subset [py]_M$ or $[px]_M\supset [py]_M$ whenever $[px]_M\cap [py]_M$ contains a nontrivial geodesic $[pw]_M$, then we say that geodesics in $M$ are \emph{nonbifurcating}.
+\end{itemize}
+
+Recall that a uniquely geodesic space $T$ is a \emph{metric tree} if every geodesic triangle $[xyz]_T$ in $T$ is a \emph{tripod};
+that is, the union of any two geodesics $[xy]_T$, and $[yz]_T$ contains $[xz]_T$.
+The \emph{valence} of $x\in T$ is defined as the cardinality of connected components in $T\setminus \{x\}$.
+
+For any cardinality $n\ge2$, there is a unique, up to isometry,
+complete metric tree $\TT_n$ with valence $n$ at every point \cite{dyubina-polterovich}.
+Moreover, $\TT_n$ is homogeneous, and if $n<\infty$, then it is all-set-homogeneous; the last statement was proved in \cite{lebedeva-petrunin2024}.
+
+We conjecture that \emph{any geodesic all-set-homogeneous space is complete} and
+\emph{any (complete) geodesic all-set-homogeneous space is a universal metric tree of finite valence or a classical space}.
+
+\begin{thm}{Theorem}
+Any geodesic all-set-homogeneous space with locally unique geodesics is a universal metric tree of finite valence or a classical space.
+\end{thm}
+
+A metric space is called \emph{$n$-point homogeneous}
+if any isometry between its subsets with at most $n$ points in each can be extended to an isometry of the whole space.
+
+\begin{thm}{Lemma}
+Suppose $M$ is a 3-point homogeneous geodesic space with locally unique geodesics.
+If it has bifurcating geodesics, then $M$ is locally a metric tree;
+that is, any point of $M$ has a neighborhood isometric to a metric tree.
+Moreover, we can assume that valence of a point in the tree is at least~$3$.
+\end{thm}
+
+\parit{Proof.}
+Homogeneity and local uniqueness of geodesics imply that there is $R>0$ such that if $|x-y|_M<R$, then $[xy]_M$ is uniquely defined.
+
+Let $[px]_M$ and $[py]_M$ be bifurcating geodesics;
+that is, $[px]_M\not\subset[py]_M$ and $[px]_M\not\supset[py]_M$, but there is a nontrivial geodesic $[pw]_M\subset [px]_M\cap[py]_M$.
+We can assume that the geodesic segment $[pw]_M$ is maximal.
+Let $\sigma_0$, $\sigma_1$, and $\sigma_2$ be the arc-length parametrizations of $[pw]_M$, $[wx]_M$, and $[wy]_M$ starting from~$w$; so, $w=\sigma_0(0)=\sigma_1(0)=\sigma_2(0)$.
+Let us restrict $\sigma_i$ to a short $[0,\ell]$ for some $0<\ell<\tfrac R2$.
+By uniqueness, we have that $\sigma_1(t)=\sigma_2(t)$ only if $t=0$.
+In particular,
+\[s(t)\df|\sigma_1(t)-\sigma_2(t)|>0\]
+if $t>0$.
+
+Clearly $s(0)=0$, and by the triangle inequality, $s\:[0,\ell]\to\RR$ is a $2$-Lipschitz function.
+(For metric trees we must have $s(t)\equiv2\cdot t$.)
+
+Observe that $s$ is strictly increasing.
+Indeed, suppose $s(r_0)\ge s(r_1)$ for some $r_0<r_1$.
+By the intermediate value theorem we can find $r_0<r_2\le r_1$ such that $s(r_0)=s(r_2)$.
+Then
+\[\sigma_1(r_0)\mapsto\sigma_1(r_2),
+\qquad
+\sigma_2(r_0)\mapsto\sigma_2(r_2),
+\qquad
+\sigma_0(r_2)\mapsto\sigma_0(r_0)\]
+defines a distance-preserving map on a 3-point set,
+which can be extended to an isometry of $M$.
+By uniqueness of geodesics, we have that $\sigma_1(t)=\sigma_2(t)$ and $s(t)=0$ if $t\le r_2-r_0$ --- a contradiction.
+
+\begin{figure}[ht!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-20}
+\end{figure}
+
+The same argument shows that $s$ is essentially the same for all choices of bifurcating geodesics.
+More precisely, if $s'$ is a function obtained the same way for another pair of bifurcating geodesics, then $s=s'$ on the common domain.
+Indeed assume $s(r)=s'(r')$  and $\sigma'_0$, $\sigma'_1$, and $\sigma'_2$ are the corresponding parametrizations for $s'$.
+Then $\sigma'_1(r')\mapsto\sigma_1(r)$, $\sigma'_2(r')\mapsto\sigma_2(r)$, and
+$\sigma'_0(r)\mapsto\sigma_0(r')$
+%\[\sigma'_1(r')\mapsto\sigma_1(r), \qquad \sigma'_2(r')\mapsto\sigma_2(r), \qquad \sigma'_0(r)\mapsto\sigma_0(r')\]
+defines a distance-preserving map, which extends to an isometry of $M$, implying $r=r'$.
+Since both functions are continuous and strictly increasing from $0$, it follows that \(s=s'\) on their common domain.
+
+Fix a point $p$ and $r>0$.
+Given a point $x$ such that $r<|p-x|_M<R$, denote by $x_r$ the point on $[px]$ such that $|p-x_r|=r$.
+Observe that for any $\eps>0$ there is $\delta>0$ such that if $|p-x|_M,|p-y|_M\in (r+\eps,R)$, and $|x-y|<\delta$, then $x_r=y_r$.
+Indeed, let $a=|p-x|_M$; we can assume that $a\le |p-y|_M$.
+Since $s$ is a strictly increasing continuous function and $s(0)=0$, we can choose $\delta>0$ such that $s(\eps)>2\cdot \delta$.
+By the triangle inequality, $|x-y|<\delta$ $\Rightarrow$ $|x-y_a|<2\cdot\delta$,
+and then $s(\eps)>2\cdot \delta$ $\Rightarrow$ $x_r=y_r$.
+
+Choose a triangle $[pxy]$ in $M$ such that $|p-x|_M<\tfrac R2$, $|p-y|_M<\tfrac R2$;
+let $r=\tfrac12\cdot(|p-x|_M+|p-y|_M-|x-y|_M)$.
+Let us show that $[pxy]$ is a tripod.
+If this is not the case, we can assume that $|p-z|_M>r$ for any $z\in [xy]$.
+Note that $|p-z|<R$; from above, $z\mapsto z_r$ locally constant and therefore constant on $[xy]$.
+It follows that $x_r=y_r\in [px]\cap[py]$.
+Since $|x-x_r|_M+|y-y_r|_M=|x-y|_M$, we have $[xy]_M\subset [px]\cup[py]$ --- a contradiction.
+Thus every sufficiently small triangle in $M$ is a tripod, and the lemma follows. \qeds
+
+\parit{Proof of the theorem.}
+Let $M$ be an all-set-homogeneous geodesic space with locally unique geodesics.
+If geodesics in $M$ do not bifurcate, then, by Birkhoff's theorem, $M$ is classical.
+Otherwise, the lemma implies that $M$ is locally a tree with valence at least $3$ at some (and therefore any) point.
+Let us show that $M$ is a metric tree; in other words, $M$ does not contain an embedded circle.
+
+Assume the contrary; let $2\cdot R$ be the greatest lower bound of lengths of embedded circles in $M$.
+Since $M$ is locally a tree, homogeneity implies that $R>0$.
+Note that an $\tfrac R2$-neighborhood of any point in $M$ is a tree with valence at least $3$ (any nontripod triangle $[pxy]$ in this neighborhood would contain an embedded circle of length less than $2\cdot R$).
+Furthermore, if $|x-y|_M<R$, then $[xy]$ is uniquely defined (two distinct geodesics between $x$ and $y$ would produce an embedded circle of length less than $2\cdot R$).
+
+It follows that any equilateral triangle in $M$ with side $s<R$ is a tripod.
+Indeed, choose a point $p$ and three points $x$, $y$, and $z$ in different components of its punctured $\tfrac R2$-neighborhood at distance $\tfrac s2$ from $p$.
+Note that $[xyz]$ is a tripod with side~$s$; by 3-point homogeneity the same holds for any triangle with side $s$.
+
+Now choose an embedded circle $\Sigma$ of length slightly above $2\cdot R$.
+Let points $x,y,z$ divide $\Sigma$ into three equal arcs of length $s$; we can assume  $s<R$.
+Note that $|x-y|_M=s$; otherwise an arc of $\Sigma$ with $[xy]_M$ contains a circle of length less than $2\cdot R$, which is impossible.
+It follows that $[xyz]$ is an equilateral triangle of side $s$, which is not a tripod --- a contradiction.
+
+Since $M$ is a tree, homogeneity implies that $M$ has the same valence at all points.
+
+All-set-homogeneity implies that $M$ is complete.%
+\footnote{Pénélope Azuelos has shown that homogeneity is not sufficient \cite{azuelos2025}: \emph{there are noncomplete 2-point homogeneous metric trees  of any valence $n\ge 3$}.}
+Indeed, if $M$ is not complete, then it contains an isometric copy of a semiopen interval $(0,\eps]$ with missing end; denote it by $J$.
+We can assume that $\eps$ is small;
+so $M$ contains an isometric copy of $[0,\eps]$; denote it by $I$.
+A distance-preserving embedding $J\to I$ must be extendable to an isometry of $M$.
+But the inverse isometry produces in $M$ the missing limit point of $J$ --- a contradiction.
+
+It follows that $M$ is a universal metric tree.
+It remains to show that it has finite valence.
+
+Consider a maximal equilateral set $A\subset M$ with respect to inclusion.
+If the valence is infinite, then so is $A$; indeed, one can take points at a fixed distance in distinct branches of the tree and then extend the obtained set to a maximal one.
+Choose an isometry $f$ from $A$ to its proper subset.
+Note that $f$ cannot be extended to an isometry of $M$; so $M$ is not all-set-homogeneous --- a contradiction.
+\qeds
+
+\paragraph{Acknowledgments.}
+We thank AI for suggesting the key observation in the proof.
+
+
+
+{\sloppy
+\printbibliography[heading=bibintoc]
+\fussy
+}
+
+\end{document}
+

@@ -1,4 +1,5 @@
 \documentclass[a4paper,10pt]{article}
+\usepackage[a-3b]{pdfx}
 \usepackage{paper-en}
 \usepackage{hyperref}
 %\usepackage[notref,notcite,color]{showkeys}
@@ -83,7 +84,7 @@ If $M$ is locally compact, then the statement follows from the Busemann--Tits re
 Therefore, we can assume that $M$ is not locally compact.
 
 In this case, there is an infinite sequence of points $x_1,x_2,\dots$ such that 
-$\eps<|x_i-x_j|_M<1$ for some fixed $\eps>0$ and all $i\ne j$.
+$\eps\z<|x_i-x_j|_M<1$ for some fixed $\eps>0$ and all $i\ne j$.
 Applying the Ramsey theorem, we get that for arbitrary positive integer $n$ there is a sequence $x_1,x_2,\dots,x_n$ such that all the distances
 $|x_i-x_j|_M$ lie in an arbitrarily small subinterval of $(\eps,1)$.
 Since the fingerprints are closed, there is an arbitrarily long sequence 
@@ -122,7 +123,7 @@ Their proof of the universality of $\TT_n$ admits a straightforward modification
 If $n$ is finite, then $\TT_n$ is all-set-homogeneous.
 \end{thm}
 
-Note that the claim implies that the condition on fingerprints in the theorem is necessary.
+Note that the claim implies that the condition on fingerprints in our theorem is necessary.
 In fact, if $n\ge 3$, then the $(n+1)^{\text{th}}$ fingerprint of $\TT_n$ is not closed --- $\TT_n$ does not contain $n+1$ points on distance 1 from each other,
 but it contains an arbitrarily large set with pairwise distances arbitrarily close to 1.
 
