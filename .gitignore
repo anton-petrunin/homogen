@@ -25,6 +25,5 @@ lib/*
 *.fls
 *latexmk
 *.tar
-*.eps
 *mptextmp.mp
 *mpxerr.tex
