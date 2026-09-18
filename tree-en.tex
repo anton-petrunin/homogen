@@ -1,5 +1,5 @@
 \documentclass[leqno,a4paper,10pt]{article}
-\usepackage[a-3b]{pdfx}
+%\usepackage[a-3b]{pdfx}
 \usepackage{paper-en}
 \usepackage{acts}
 \usepackage{hyperref}
@@ -43,13 +43,11 @@ These will be referred further as \emph{classical spaces}.
 
 Garrett Birkhoff proved that \emph{any all-set-homogeneous geodesic space with locally unique nonbifurcating geodesics is classical} \cite{birkhoff}.
 Here we use the following terminology:
-\begin{itemize}
-\item A \emph{geodesic} in a metric space $M$ is a distance-preserving map from a real interval to $M$.
+A \emph{geodesic} in a metric space $M$ is a distance-preserving map from a real interval to $M$.
 The image of a geodesic with endpoints $x$ and $y$ can be denoted by $[xy]_M$ and it might be also called \emph{geodesic}.
 If for any $x,y\in M$ there is a geodesic $[xy]_M$, then $M$ is called a \emph{geodesic space}.
-\item If any point $p\in M$ admits a neighborhood $U$ such that the geodesic $[xy]_M$ is uniquely defined for any $x,y\in U$, then $M$ has \emph{locally unique geodesics}.
-\item If $[px]_M\subset [py]_M$ or $[px]_M\supset [py]_M$ whenever $[px]_M\cap [py]_M$ contains a nontrivial geodesic $[pw]_M$, then we say that geodesics in $M$ are \emph{nonbifurcating}.
-\end{itemize}
+If any point $p\in M$ admits a neighborhood $U$ such that the geodesic $[xy]_M$ is uniquely defined for any $x,y\in U$, then $M$ has \emph{locally unique geodesics}.
+If $[px]_M\subset [py]_M$ or $[px]_M\supset [py]_M$ whenever $[px]_M\cap [py]_M$ contains a nontrivial geodesic $[pw]_M$, then we say that geodesics in $M$ are \emph{nonbifurcating}.
 
 Recall that a uniquely geodesic space $T$ is a \emph{metric tree} if every geodesic triangle $[xyz]_T$ in $T$ is a \emph{tripod};
 that is, the union of any two geodesics $[xy]_T$, and $[yz]_T$ contains $[xz]_T$.
@@ -73,7 +71,7 @@ if any isometry between its subsets with at most $n$ points in each can be exten
 Suppose $M$ is a 3-point homogeneous geodesic space with locally unique geodesics.
 If it has bifurcating geodesics, then $M$ is locally a metric tree;
 that is, any point of $M$ has a neighborhood isometric to a metric tree.
-Moreover, we can assume that valence of a point in the tree is at least~$3$.
+%Moreover, we can assume that valence of a point in the tree is at least~$3$.
 \end{thm}
 
 \parit{Proof.}
@@ -82,7 +80,7 @@ Homogeneity and local uniqueness of geodesics imply that there is $R>0$ such tha
 Let $[px]_M$ and $[py]_M$ be bifurcating geodesics;
 that is, $[px]_M\not\subset[py]_M$ and $[px]_M\not\supset[py]_M$, but there is a nontrivial geodesic $[pw]_M\subset [px]_M\cap[py]_M$.
 We can assume that the geodesic segment $[pw]_M$ is maximal.
-Let $\sigma_0$, $\sigma_1$, and $\sigma_2$ be the arc-length parametrizations of $[pw]_M$, $[wx]_M$, and $[wy]_M$ starting from~$w$; so, $w=\sigma_0(0)=\sigma_1(0)=\sigma_2(0)$.
+Let $\sigma_0$, $\sigma_1$, and $\sigma_2$ be the arc-length parametrizations of $[wp]_M$, $[wx]_M$, and $[wy]_M$ starting from~$w$; so, $w=\sigma_0(0)=\sigma_1(0)=\sigma_2(0)$.
 Let us restrict each $\sigma_i$ to a segment $[0,\ell]$ for some $0<\ell<\tfrac R2$.
 By uniqueness, we have that $\sigma_1(t)=\sigma_2(t)$ only if $t=0$.
 In particular,
@@ -120,8 +118,10 @@ $\sigma'_0(r)\mapsto\sigma_0(r')$
 defines a distance-preserving map, which extends to an isometry of $M$, implying $r=r'$.
 Since both functions are continuous and strictly increasing from $0$, it follows that \(s=s'\) on their common domain.
 
+
+
 Fix a point $p\in M$ and $r>0$.
-Given a point $x$ such that $r<|p-x|_M<R$, denote by $x_r$ the point on $[px]$ such that $|p-x_r|=r$.
+Given a point $x$, denote by $x_r$ the point on $[px]_M$ such that $|p-x_r|=r$; it is uniquely defined if $r<|p-x|_M<R$.
 Observe that for any small $\eps>0$ there is $\delta>0$ such that
 \[r+\eps<|p-x|_M<R,\quad r+\eps<|p-y|_M<R,\quad\text{and}\quad|x-y|<\delta\]
 imply that $x_r=y_r$.
@@ -130,70 +130,67 @@ Since $s$ is continuous and strictly increasing from $0$, we can choose $\delta>
 By the triangle inequality, $|x-y|<\delta$ $\Rightarrow$ $|x-y_a|<2\cdot\delta$,
 and then $s(\eps)>2\cdot \delta$ $\Rightarrow$ $x_r=y_r$.
 
-Choose a geodesic triangle $[pxy]$ in $M$ such that $|p-x|_M<\tfrac R2$, $|p-y|_M<\tfrac R2$;
+Choose a geodesic triangle $[pxy]_M$ in $M$ such that $|p-x|_M<\tfrac R2$, $|p-y|_M<\tfrac R2$;
 let $r=\tfrac12\cdot(|p-x|_M+|p-y|_M-|x-y|_M)$.
-Let us show that $[pxy]$ is a tripod.
-If this is not the case, we can assume that $|p-z|_M>r$ for any $z\in [xy]$;
+Let us show that $[pxy]_M$ is a tripod.
+If not, then $|p-z|_M>r$ for any $z\in [xy]_M$;
 note also that $|p-z|<R$.
-From above, $z\mapsto z_r$ locally constant and therefore constant on~$[xy]$.
-It follows that $x_r=y_r\in [px]\cap[py]$.
-Since $|x-x_r|_M+|y-y_r|_M=|x-y|_M$, we have $[xy]_M\subset [px]\cup[py]$ --- a contradiction.
+From above, $z\mapsto z_r$ locally constant and therefore constant on~$[xy]_M$.
+It follows that $x_r=y_r\in [px]_M\cap[py]_M$.
+Since $|x-x_r|_M+|y-y_r|_M=|x-y|_M$, we have $[xy]_M\subset [px]_M\cup[py]_M$ --- a contradiction.
 Thus every sufficiently small triangle in $M$ is a tripod, and the statement follows. \qeds
 
 Let us define \emph{local geodesic} as a locally distance-preserving map from an interval to a metric space.
 A geodesic space $M$ will be called \emph{geodesically complete} if any nontrivial geodesic in $M$ can be extended to a local geodesic defined on the whole real line.
 
 \begin{thm}{Lemma}
-Any all-set-homogeneous geodesic space is geodesically complete.
+Any all-set-homogeneous geodesic space $M$ is geodesically complete.
 \end{thm}
 
 \parit{Proof.}
-Choose a geodesic $\gamma$ in an all-set-homogeneous geodesic space $M$.
+Choose a geodesic $\gamma$ in $M$; suppose it is defined on an interval $\II$.
 
-Suppose $\gamma$ is defined on an interval $\II$.
-Choose a subinterval $\JJ\subset \II$ and nontrivial shift $\JJ'\subset \II$ by $a>0$ such that $\II=\JJ\cup\JJ'$, and $\JJ\cap\JJ'$ is a nontrivial interval.
+Choose a subinterval $\JJ\subset \II$ and its shift $\JJ'\subset \II$ by $a>0$ such that $\II=\JJ\cup\JJ'$.
 The map $\gamma(t)\mapsto \gamma(t+a)$ extends to an isometry $F $ of $M$,
-and we can extend $\gamma$ to $R$ by setting
-\[\bar\gamma(t+n\cdot a)\df F^n\circ \gamma(t)\]
-for $t\in \JJ$ and integer $n$.
+and we can extend $\gamma$ by a local geodesic defined by $\bar\gamma(t+n\cdot a)\df F^n\circ \gamma(t)$
+for $t\in \JJ$ and integer~$n$.
 \qeds
 
 \begin{thm}{Claim}
-Any geodesically complete metric tree is complete.
+Any geodesically complete metric tree $T$ is complete.
 \end{thm}
 
 \parit{Proof.}
-Let $T$ be a geodesically complete metric tree.
-Choose a Cauchy sequence $x_0,x_1,\ldots$ in~$T$.
-Let $\ell=\lim |x_0-x_n|_T$; if $\ell=0$, then $x_0$ is the limit point.
+Assume there is a nonconverging Cauchy sequence $x_0,x_1,\ldots$ in~$T$.
+Let $\ell=\lim |x_0-x_n|_T$; note that $\ell>0$.
 
 Denote by $\gamma_n$ the geodesic from $x_0$ to $x_n$ that is parametrized from $x_0$.
 If $0\le t<\ell$, then the sequence $\gamma_n(t)$ stabilises; that is, $\gamma_i(t)=\gamma_j(t)$ for all sufficiently large $i$ and $j$.
 Defining $\gamma_\infty(t)$ as $\gamma_n(t)$ for sufficiently large $n$, produces a geodesic $\gamma_\infty \colon[0,\ell)\to T$.
-Since $T$ is geodesically complete, $\gamma_\infty$ extends to $[0,\ell]$.
-It remains to note that $x_0,x_1,\dots$ converge to $\gamma_\infty(\ell)$.
+Since $T$ is geodesically complete, $\gamma_\infty$ extends to $[0,\ell]$, but $x_0,x_1,\dots$ converge to $\gamma_\infty(\ell)$ --- a contradiction.
 \qeds
 
 \parit{Proof of the theorem.}
 Let $M$ be an all-set-homogeneous geodesic space with locally unique geodesics.
 If geodesics in $M$ do not bifurcate, then, by Birkhoff's theorem, $M$ is classical.
-Otherwise, the proposition implies that $M$ is locally a tree with valence at least $3$ at some (and therefore any) point.
+Otherwise, the proposition implies that $M$ is locally a tree.
+Existence of bifurcation implies that the local tree has valence at least $3$ at some (and therefore any) point.
 
 Let us show that $M$ is a metric tree; in other words, $M$ does not contain an embedded circle.
 
 Assume the contrary; let $2\cdot R$ be the greatest lower bound of lengths of embedded circles in $M$.
 Since $M$ is locally a tree, homogeneity implies that $R>0$.
-Note that an $\tfrac R2$-neighborhood of any point in $M$ is a tree with valence at least $3$ (indeed, any nontripod triangle $[pxy]$ in this neighborhood would contain an embedded circle of length less than $2\cdot R$).
-Furthermore, if $|x-y|_M<R$, then $[xy]$ is uniquely defined (distinct geodesics from $x$ to $y$ would produce an embedded circle of length less than $2\cdot R$).
+Note that an $\tfrac R2$-neighborhood of any point in $M$ is a tree with valence at least $3$ (indeed, any nontripod triangle $[pxy]_M$ in this neighborhood would contain an embedded circle of length less than $2\cdot R$).
+Furthermore, if $|x-y|_M\z<R$, then $[xy]_M$ is uniquely defined (again, distinct geodesics from $x$ to $y$ would produce an embedded circle of length less than $2\cdot R$).
 
 It follows that any equilateral triangle in $M$ with side $s<R$ is a tripod.
 Indeed, choose a point $p$ and three points $x$, $y$, and $z$ in different components of its punctured $\tfrac R2$-neighborhood at distance $\tfrac s2$ from $p$.
-Note that $[xyz]$ is a tripod with side~$s$; by 3-point homogeneity the same holds for any triangle with side $s$.
+Note that $[xyz]_M$ is a tripod with side~$s$; by 3-point homogeneity the same holds for any triangle with side $s$.
 
 Now choose an embedded circle $\Sigma$ of length slightly above $2\cdot R$.
 Choose points $x,y,z$ that divide $\Sigma$ into three equal arcs of length $s$; we can assume  $s<R$.
 Note that $|x-y|_M=s$; otherwise an arc of $\Sigma$ with $[xy]_M$ contains a circle of length less than $2\cdot R$, which is impossible.
-It follows that $[xyz]$ is an equilateral triangle of side $s$, which is not a tripod --- a contradiction.
+It follows that $[xyz]_M$ is an equilateral triangle of side $s$, which is not a tripod --- a contradiction.
 
 Now, $M$ is an all-set-homogeneous metric tree; in particular, it has the same valence at every point.
 The lemma and the claim imply that $M$ is complete.%
