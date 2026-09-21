@@ -102,4 +102,92 @@ label.bot (btex $\sigma_2(r_2)$ etex,  z.r2 yscaled -1);
 
 endfig;
 
+beginfig(30)
+
+save u,p;
+path p[];
+u:=1cm;
+
+z.w1=(-4,0)*u;
+z.w2=-z.w1;
+z.p1=.3*z.w1;
+z.p2=-z.p1;
+z.v1=.5*z.w1;
+z.v2=.6*z.w2;
+z.q1=z.p2 zscaled (0,.5);
+z.q2=-z.q1;
+
+p1=z.w1{(1,0)}..z.p1{(1,0)}..z.q1{(1,0)}..z.p2{(1,0)}..z.w2{(1,0)};
+
+z.qq1= point 1.5 of p1;
+z.qq2=z.qq1 yscaled -1;
+
+
+draw p1;
+draw subpath (1,3) of p1 yscaled -1;
+
+draw z.q1--z.q2 dashed evenly;
+draw z.qq1{(.6,-1)}..{(-.6,-1)}z.qq2 dashed evenly;
+
+dOt z.w1,z.w2,z.p1,z.p2,z.q1,z.q2,z.qq1,z.qq2,z.v1,z.v2;
+
+
+label.lft (btex $w_1$ etex,z.w1);
+label.rt (btex $w_2$ etex,z.w2);
+label.top (btex $p_1$ etex,z.p1);
+label.top (btex $p_2$ etex,z.p2);
+label.top (btex $q_1$ etex,z.q1);
+label.bot (btex $q_2$ etex,z.q2);
+label.top (btex $q'_1$ etex,z.qq1);
+label.bot (btex $q'_2$ etex,z.qq2);
+label.top (btex $v_1$ etex,z.v1);
+label.top (btex $v_2$ etex,z.v2);
+
+endfig;
+
+beginfig(40)
+
+save u,p;
+path p[];
+u:=1.4cm;
+
+z.a=(0,.7)*u;
+
+z.s=(1,0)*u;
+z.p=(0,0);
+z.pp=z.p+z.s;
+z.u=z.pp+z.s;
+z.x1= z.u+ z.s +.5*z.a;
+z.x2= z.u+ z.s + 1.5*z.a;
+z.y=z.u+ z.s -.5*z.a;
+z.v=z.x2+z.s;
+z.w=z.x1+z.y-z.u;
+z.vv=z.v yscaled -1;
+z.uu=z.v+z.vv-z.u;
+
+draw z.p--z.pp--z.u--z.y--z.vv--z.uu--z.w--z.y;
+draw z.uu--z.v--z.x1--z.u--z.x2--z.u;
+draw z.x1--z.w--z.x2--z.v;
+drawarrow .2[z.u,z.w]--.8[z.u,z.w] dashed evenly scaled .5;
+drawarrow .2[z.w,z.v]--.8[z.w,z.v] dashed evenly scaled .5;
+
+dOt z.p,z.pp,z.u,z.v,z.uu,z.vv,.5[z.uu,z.v],z.w,.5[z.uu,z.vv],.5[z.uu,z.w];
+
+Dot z.x1,z.x2,z.y;
+
+
+label.lft (btex $z$ etex,z.p);
+label.bot (btex $p$ etex,z.u);
+label.rt (btex $p'$ etex,z.uu);
+label.bot (btex $y$ etex,z.y+(0,-1));
+label.ulft (btex $x_1$ etex,z.x1);
+label.top (btex $x_{n-1}$ etex,z.x2);
+label.top (btex $q$ etex,z.v);
+label.top (btex $q'$ etex,z.vv);
+label.urt (btex $w$ etex,z.w);
+label(btex $\vdots$ etex,.5[z.x1,z.x2]+(0,2));
+label.top (btex $\iota$ etex,.5[z.u,z.w]+(0,-1));
+label.rt (btex $\iota'$ etex,.5[z.w,z.v]+(-1,0));
+endfig;
+
 end
