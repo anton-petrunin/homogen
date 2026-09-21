@@ -21,7 +21,6 @@ lib/*
 *.mps
 *.mpx
 *.pdf
-*.txt
 *.fls
 *latexmk
 *.tar
