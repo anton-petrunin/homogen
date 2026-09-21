@@ -141,33 +141,31 @@ All-set-homogeneous geodesic spaces have locally unique geodesics.
 Given two points $p$ and $q$ in a geodesic space $M$, let us denote by $\vv pq\ww$ the union of all geodesics from $p$ to $q$.
 In other words,
 \[x\in \vv pq\ww\quad\Leftrightarrow\quad|p-x|+|q-x|=|p-q|.\]
-Further, given a set $Q\subset M$, let
-\[\vv pQ\ww=\bigcap_{q\in Q} \vv pq\ww.\]
 
 \begin{thm}{Lemma}\label{lem:split-time}
 Let $M$ be an all-set-homogeneous geodesic space.
-For any point $p\in M$ and any nonempty set $Q\subset M$ there is a point $x\in \vv pQ\ww$ that maximizes the distance $|p-x|$.
+For any triple of points $p,q_1,q_2\in M$ there is a point $x\in \vv pq_1\ww\cap \vv pq_2\ww$ that maximizes the distance $|p-x|$.
 
 \end{thm}
 
 \parit{Proof.}
-Let $r=\sup\set{|p-x|}{x\in \vv pQ\ww}$.
+Let $r=\sup\set{|p-x|}{x\in \vv pq_1\ww\cap \vv pq_2\ww}$.
 
-Choose a sequence $x_1,x_2,\ldots\in \vv pQ\ww$ such that the sequence $r_n=|p-x_n|$ is increasing  and $r_n\to r$ as $n\to\infty$.
+Choose a sequence $x_1,x_2,\ldots\in \vv pq_1\ww\cap \vv pq_2\ww$ so that $r_n=|p-x_n|$ is an increasing sequence converging to $r$.
 Applying induction, we can assume
 \[[px_1]\subset[px_2]\subset\dots \tag{${*}$}\]
 Indeed, suppose $[px_1]\subset\ldots\subset[px_{n-1}]$.
-Choose a geodesic $[px_n]$ and points $x'_1,\ldots,x_{n-1}\in [px_n]$ such that $|p-x'_i|=|p-x_i|$.
-Since $M$ is all-set-homogeneous there is an isometry of $M$ that fixes $\{p\}\cup Q$ and moves $x'_i$ to $x_i$;
+Choose a geodesic $[px_n]$ and points $x'_1,\ldots,x'_{n-1}\in [px_n]$ such that $|p-x'_i|=|p-x_i|$ for each $i<n$.
+Since $M$ is all-set-homogeneous there is an isometry of $M$ that fixes points $p$, $q_1$, $q_2$ and moves $x'_i$ to $x_i$;
 this isometry moves $x_n$ to a new position such that $[px_{n-1}]\subset [px_n]$.
 
-The nested union of geodesics in $({*})$ is a geodesic.
-By \ref{obs:geodesically-complete} it extends to the limit point $x$ of the sequence, hence the result.
+
+By \ref{obs:geodesically-complete}, the nested union of geodesics in $({*})$ extends to an infinite local geodesic, which contains the limit point $x$ of the sequence; hence the result.
 \qeds
 
 \subsection*{Splitting function}
 
-Consider a point $p$ and a two-point set $Q=\{q_1,q_2\}$ in an all-set-homogeneous geodesic space~$M$.
+Consider three points $p$, $q_1$, and $q_2$ in an all-set-homogeneous geodesic space~$M$.
 Let $x$ be the splitting point provided by \ref{lem:split-time}.
 If $|p-q_1|\z=|p-q_2|$ and $x\ne p$, then a triple of geodesics $[xq_1]$, $[xq_2]$, and $[xp]$ will be called a \emph{fork}.
 Note that unions $[xp]\cup [xq_1]$ and $[xp]\cup [xq_2]$ form geodesics $[pq_1]$ and $[pq_2]$.
@@ -263,8 +261,7 @@ both close to its midpoint.
 Note that $|q_1-q_2|\le|v_1-v_2|$;
 hence it is small.
 Therefore, $|q_1-q_2|=s(r)$ for some $r\ll R$.
-Set $Q=\{q_1,q_2\}$,
-and let $p_i$ be the point provided by \ref{lem:split-time} for $w_i$ and $Q$.
+Let $p_i$ be the point provided by \ref{lem:split-time} for $w_i$, $q_1$ and $q_2$.
 Note that $p_1$, $p_2$, $q_1$, $q_2$ form an $r$-rhombus.
 
 \begin{figure}[ht!]
@@ -292,17 +289,19 @@ $x_1,x_2,\ldots\in M$ such that
 |x_i-x_j|=s(r)\] for $ i\ne j$.
 \end{thm}
 
-\parit{Proof.}
-Choose two points $p$ and $q$ such that $|p-q|=2\cdot r$.
-Since $r$ is small, we can extend this pair to a $2\cdot r$-rhombus $p,p',q,q'\in M$;
-that is, $|p-p'|=4\cdot r$, $|q-q'|=s(2\cdot r)$, and $|p-q|=|p'-q|=|p-q'|=|p'-q'|=2\cdot r$.
-Furthermore, there is a point $z$ such that $p\in \vv zp'\ww$ and $|z-p|=2\cdot r$.
+
+The proofexplains the following picture; here marked geodesic segments have length $r$, ands black points are at the distant $s(r)$ from each other.
 \begin{figure}[ht!]
 \centering\vskip-0mm
 \includegraphics{mppics/pic-40}
 \vskip-0mm
 \end{figure}
-All marked geodesic segments in the picture have length $r$; black points are equidistant.
+
+\parit{Proof.}
+Choose two points $p$ and $q$ such that $|p-q|=2\cdot r$.
+Since $r$ is small, we can extend this pair to a $2\cdot r$-rhombus $p,p',q,q'\in M$;
+that is, $|p-p'|=4\cdot r$, $|q-q'|=s(2\cdot r)$, and $|p-q|=|p'-q|=|p-q'|=|p'-q'|=2\cdot r$.
+Furthermore, there is a point $z$ such that $p\in \vv zp'\ww$ and $|z-p|=2\cdot r$.
 
 Suppose we have a finite sequence $x_1,\ldots,x_{n-1}$ that meets the conditions.
 We construct one more point $x_n$; induction then finishes the proof.
@@ -430,7 +429,7 @@ Thus $M$ is a universal metric tree;
 it remains to show that it has finite valence.
 
 Assume the valence is infinite.
-Then there is an infinite equilateral set $A\z\subset M$;
+Then there is an infinite equilateral set $E\z\subset M$;
 indeed, one can take points at a fixed distance in distinct branches of the tree.
 This contradicts \ref{obs:equilateral}.
 \qeds
