@@ -19,6 +19,7 @@ pdftitle={\thetitle},
 pdfauthor={\theauthors}
 }
 
+
 %\overfullrule=100mm
 
 \begin{document}
@@ -54,15 +55,18 @@ then we say that geodesics in $M$ are \emph{nonbifurcating}.
 
 Recall that a uniquely geodesic space $T$ is a \emph{metric tree} if every geodesic triangle in $T$ is a \emph{tripod};
 that is, the union of any two sides of any geodesic triangle in $T$ contains the remaining side.
-The \emph{valence} of $x\in T$ is defined as the cardinality of connected components in $T\setminus \{x\}$.
+The \emph{valence} of $x\in T$ is defined as the cardinality of the set of connected components in $T\setminus \{x\}$.
 
-For any cardinality $n\ge2$, there is a unique, up to isometry,
+For any cardinal $n\ge2$, there is a unique, up to isometry,
 complete metric tree $\TT_n$ with valence $n$ at every point \cite{dyubina-polterovich}.
 Moreover, $\TT_n$ is homogeneous, and if $n<\infty$, then it is all-set-homogeneous; the last statement was proved in \cite{lebedeva-petrunin2024}.
 
 \begin{thm}{Theorem}\label{thm:main}
 Any all-set-homogeneous geodesic space is a universal metric tree of finite valence or a classical space.
 \end{thm}
+
+The same conclusion should hold for (complete) all-set-homogeneous length spaces;
+a metric space is called a \emph{length space} if the distance between any two points can be approximated arbitrarily well by lengths of curves joining them.
 
 We show first that an all-set-homogeneous geodesic space must have locally unique geodesics.
 If geodesics bifurcate, we then show that the space is a universal metric tree of finite valence;
@@ -91,10 +95,13 @@ Since $\iota$ fixes the centers of the spheres, it defines an isometry of $\Sigm
 The last statement follows since $S(p,\tfrac12\cdot|p-q|)\cap S(q,\tfrac12\cdot|p-q|)$ is the set of all midpoints of a pair $p,q\in M$.
 \qeds
 
+Let us mention that \emph{a family of spheres in an all-set-homogeneous metric space has nonempty intersection if it has the finite intersection property}.
+This statement follows from a theorem of Piotr Niemiec \cite[3.9]{niemiec2023}.
+
 A subset $E$ of a metric space is called equilateral if the distance $|e-e'|$ is the same for any pair of distinct points $e,e'\in E$.
 
 \begin{thm}{Observation}\label{obs:equilateral}
-An equilateral all-set-homogeneous metric space must be finite.
+Every equilateral subset of an all-set-homogeneous metric space is finite.
 \end{thm}
 
 The proof repeats the argument of Garrett Birkhoff \cite[Theorem 18]{birkhoff}.
@@ -108,7 +115,7 @@ otherwise $F^{-1}(e)$ for $e\in \bar E\setminus f(\bar E)$ can be added to $\bar
 Therefore, $M$ is not all-set-homogeneous --- a contradiction.
 \qeds
 
-Let us define \emph{local geodesic} as a locally distance-preserving map from an interval to a metric space.
+Let us define a \emph{local geodesic} to be a locally distance-preserving map from a real interval to a metric space.
 A geodesic space $M$ will be called \emph{geodesically complete}
 if any nontrivial geodesic in $M$ can be extended to a local geodesic defined on the whole real line.
 
@@ -122,10 +129,9 @@ suppose it is defined on an interval $\II$.
 
 Choose a subinterval $\JJ\subset \II$ and its shift $\JJ'\subset \II$ by $a>0$ such that $\II=\JJ\cup\JJ'$.
 The map $\gamma(t)\mapsto \gamma(t+a)$ extends to an isometry $F $ of $M$,
-and we can extend $\gamma$ by a local geodesic defined by $\bar\gamma(t+n\cdot a)\df F^n\circ \gamma(t)$
+and we can extend $\gamma$ to a local geodesic defined by $\bar\gamma(t+n\cdot a)\df F^n\circ \gamma(t)$
 for $t\in \JJ$ and integer~$n$.
 \qeds
-
 
 \section{Locally unique geodesics}
 
@@ -154,25 +160,31 @@ Let $r=\sup\set{|p-x|}{x\in \vv pq_1\ww\cap \vv pq_2\ww}$.
 Choose a sequence $x_1,x_2,\ldots\in \vv pq_1\ww\cap \vv pq_2\ww$ so that $r_n=|p-x_n|$ is an increasing sequence converging to $r$.
 Applying induction, we can assume
 \[[px_1]\subset[px_2]\subset\dots \tag{${*}$}\]
-Indeed, suppose $[px_1]\subset\ldots\subset[px_{n-1}]$.
-Choose a geodesic $[px_n]$ and points $x'_1,\ldots,x'_{n-1}\in [px_n]$ such that $|p-x'_i|=|p-x_i|$ for each $i<n$.
-Since $M$ is all-set-homogeneous there is an isometry of $M$ that fixes points $p$, $q_1$, $q_2$ and moves $x'_i$ to $x_i$;
-this isometry moves $x_n$ to a new position such that $[px_{n-1}]\subset [px_n]$.
 
+Indeed, suppose $[px_1]\subset\ldots\subset[px_{n-1}]$.
+Choose a geodesic $[px_n]$ and a point $x'_{n-1}\in [px_n]$ such that $|p-x'_{n-1}|=|p-x_{n-1}|$.
+Since $M$ is all-set-homogeneous there is an isometry of $M$ that fixes points $p$, $q_1$, $q_2$ and sends $x'_{n-1}$ to $x_{n-1}$.
+Replacing $x_n$ by its image under this isometry, we have $[px_{n-1}]\subset [px_n]$ for an appropriate choice of $[px_n]$.
 
 By \ref{obs:geodesically-complete}, the nested union of geodesics in $({*})$ extends to an infinite local geodesic, which contains the limit point $x$ of the sequence; hence the result.
 \qeds
 
 \subsection*{Splitting function}
 
-Consider three points $p$, $q_1$, and $q_2$ in an all-set-homogeneous geodesic space~$M$.
+Consider three distinct points $p$, $q_1$, and $q_2$ in an all-set-homogeneous geodesic space~$M$.
 Let $x$ be the splitting point provided by \ref{lem:split-time}.
 If $|p-q_1|\z=|p-q_2|$ and $x\ne p$, then a triple of geodesics $[xq_1]$, $[xq_2]$, and $[xp]$ will be called a \emph{fork}.
 Note that unions $[xp]\cup [xq_1]$ and $[xp]\cup [xq_2]$ form geodesics $[pq_1]$ and $[pq_2]$.
-
-Consider a fork $[xq_1]$, $[xq_2]$, $[xp]$;
-let $\sigma_0$, $\sigma_1$, and $\sigma_2$ be the arc-length parametrizations of $[xp]$, $[xq_1]$, and $[xq_2]$ starting from~$x$;
+Let $\sigma_0$, $\sigma_1$, and $\sigma_2$ be the arc-length parametrizations of $[xp]$, $[xq_1]$, and $[xq_2]$ starting from~$x$;
 so, $x\z=\sigma_0(0)\z=\sigma_1(0)\z=\sigma_2(0)$.
+
+\begin{wrapfigure}{o}{40mm}
+\centering
+\vskip-4mm
+\includegraphics{mppics/pic-50}
+\vskip-0mm
+\end{wrapfigure}
+
 Let us restrict each $\sigma_i$ to a segment $[0,\ell]$ for some $0<\ell<\tfrac12\cdot\diam M$.
 Note that $\sigma_1(t)=\sigma_2(t)$ only if $t=0$.
 In particular, \[s(t)\df|\sigma_1(t)-\sigma_2(t)|>0
@@ -195,14 +207,15 @@ by the triangle inequality, $s$ is $2$-Lipschitz.
 
 Observe that $s$ is strictly increasing.
 Indeed, suppose $s(r_0)\ge s(r_1)$ for some $r_0<r_1$.
-By the intermediate value theorem we can find $r_0<r_2\le r_1$ such that $s(r_0)=s(r_2)$.
+By the intermediate value theorem we can find $0<r\le r_0<r'\le r_1$
+ such that $s(r)=s(r')$.
 Let $\sigma_0$, $\sigma_1$, and $\sigma_2$ be as above.
 Then
-\[\sigma_1(r_0)\mapsto\sigma_1(r_2),
+\[\sigma_1(r)\mapsto\sigma_1(r'),
 \qquad
-\sigma_2(r_0)\mapsto\sigma_2(r_2),
+\sigma_2(r)\mapsto\sigma_2(r'),
 \qquad
-\sigma_0(r_2)\mapsto\sigma_0(r_0)\]
+\sigma_0(r')\mapsto\sigma_0(r)\]
 defines a distance-preserving map on a 3-point set,
 \begin{figure}[ht!]
 \vskip-0mm
@@ -210,24 +223,19 @@ defines a distance-preserving map on a 3-point set,
 \includegraphics{mppics/pic-20}
 \end{figure}
 which can be extended to an isometry of $M$.
-By maximality of the splitting point, we have that $\sigma_1(t)=\sigma_2(t)$ and $s(t)=0$ if $t\le r_2-r_0$ --- a contradiction.
-Here we apply \ref{lem:split-time} to two pairs:
-$\sigma_0(r_2)$, $\{\sigma_1(r_0),\sigma_2(r_0)\}$
-and $\sigma_0(r_0)$, $\{\sigma_1(r_2),\sigma_2(r_2)\}$.
-
+The maximal splitting distances for the two triples are $r'$ and $r$, and the isometry must preserve this quantity.
+Therefore $r'=r$ --- a contradiction.
+Here we apply \ref{lem:split-time} to two triples:
+$\sigma_0(r')$, $\sigma_1(r)$, $\sigma_2(r)$
+and $\sigma_0(r)$, $\sigma_1(r')$, $\sigma_2(r')$.
 
 The same argument proves the second statement.
 Indeed, assume $s'$ is a splitting function for another fork described by geodesics $\sigma'_0$, $\sigma'_1$, and $\sigma'_2$.
-If $s(r)=s'(r')$, then $\sigma'_1(r')\mapsto\sigma_1(r)$, $\sigma'_2(r')\mapsto\sigma_2(r)$, and
+If $s(r)=s'(r')$ for $r$ and $r'$ in the common domain, then $\sigma'_1(r')\mapsto\sigma_1(r)$, $\sigma'_2(r')\mapsto\sigma_2(r)$, and
 $\sigma'_0(r)\mapsto\sigma_0(r')$
 define a distance-preserving map, which extends to an isometry of $M$, implying $r=r'$.
 Since both functions are continuous and strictly increasing from $0$, it follows that $s=s'$ on their common domain.
 \qeds
-
-
-
-
-
 
 \begin{thm}{Corollary}\label{cor:splitting-function}
 Let $M$ be an all-set-homogeneous geodesic space, and let $s$ be its splitting function.
@@ -249,12 +257,12 @@ for all $i$ and $j$;
 here $s$ denotes the splitting function of $M$.
 \end{thm}
 
-The configuration of points provided by the lemma will be called \emph{$r$-rhombus}.
+The configuration of points provided by the lemma will be called an \emph{$r$-rhombus}.
 
 \parit{Proof.}
 Suppose $0<R<\diam M$.
 
-Since the geodesics are not unique, we may find a configuration of distinct points $v_1,v_2,q_1,q_2$ such that $|v_1-v_2|$ is small, $q_1,q_2\in \vv v_1v_2\ww$ and $|v_1-q_1|\z=|v_1-q_2|$ (and hence $|v_2-q_1|=|v_2-q_2|$).
+Since the geodesics are not locally unique, we may find a configuration of distinct points $v_1,v_2,q_1,q_2$ such that $|v_1-v_2|$ is small, $q_1,q_2\in \vv v_1v_2\ww$ and $|v_1-q_1|\z=|v_1-q_2|$ (and hence $|v_2-q_1|=|v_2-q_2|$).
 Since the space is geodesic and all-set-homogeneous, points $v_1$ and $v_2$ lie on an $R$-long geodesic $[w_1w_2]$,
 both close to its midpoint.
 
@@ -289,8 +297,8 @@ $x_1,x_2,\ldots\in M$ such that
 |x_i-x_j|=s(r)\] for $ i\ne j$.
 \end{thm}
 
-
-The proof explains the following picture; here marked geodesic segments have length $r$, ands black points are at the distant $s(r)$ from each other.
+The proof explains the following picture;
+the marked geodesic segments have length $r$, and the black points are pairwise at distance $s(r)$.
 \begin{figure}[ht!]
 \centering\vskip-0mm
 \includegraphics{mppics/pic-40}
@@ -321,8 +329,7 @@ Note that the point $x_n=\iota'(y)$ meets all the requirements.
 \qeds
 
 \parit{Proof of \ref{prop:unique-geod}.}
-Assume, to the contrary;
-let $M$ be an all-set-homogeneous geodesic space that is not locally uniquely geodesic.
+Assume, to the contrary, that $M$ is an all-set-homogeneous geodesic space that is not locally uniquely geodesic.
 Choose two sufficiently close points $p,q\in M$;
 let $r=\tfrac12\cdot|p-q|$.
 By the self-improving lemma, the set of midpoints of $p$ and $q$ contains an infinite $s(r)$-equilateral set,
@@ -330,8 +337,6 @@ which contradicts \ref{obs:spheres} and \ref{obs:equilateral}.
 \qeds
 
 \section{Spaces with locally unique geodesics}
-
-
 
 \begin{thm}{Proposition}\label{prop:loc-tree}
 Let $M$ be an all-set-homogeneous geodesic space with locally unique geodesics.
@@ -351,14 +356,26 @@ Let $s$ be the splitting function of $M$; it is defined since $M$ has bifurcatin
 
 Fix a point $p\in M$ and $r>0$.
 Given a point $x$, denote by $x_r$ the point on $[px]$ such that $|p-x_r|=r$;
-it is uniquely defined if $r<|p-x|<R$.
+it is uniquely defined if $r\le |p-x|<R$.
 Observe that for any small $\eps>0$ there is $\delta>0$ such that
 \[r+\eps<|p-x|<R,\  r+\eps<|p-y|<R,\ \text{and}\ |x-y|<\delta\ \Rightarrow\  x_r=y_r.\]
+
+\begin{wrapfigure}{o}{40mm}
+\centering
+\vskip-4mm
+\includegraphics{mppics/pic-60}
+\vskip-0mm
+\end{wrapfigure}
+
 Indeed, let $a=|p-x|$;
 we can assume that $a\le |p-y|$.
-Since $s$ is continuous and strictly increasing from $0$, we can choose $\delta>0$ such that $s(\eps)>2\cdot \delta$.
-By the triangle inequality, $|x-y|<\delta$ $\Rightarrow$ $|x-y_a|<2\cdot\delta$,
-and $s(\eps)>2\cdot \delta$ $\Rightarrow$ $x_r=y_r$.
+By \ref{lem:splitting-function}, we can choose $\delta>0$ such that $s(\eps)>2\cdot \delta$.
+By the triangle inequality,
+\[|x-y|<\delta\quad\Rightarrow\quad|x-y_a|<2\cdot\delta.\]
+Suppose $z$ is the splitting point of $[px]$ and $[py]$, and let $b=|z-x|=|z-y_a|$.
+Then, by 3-point homogeneity, $s(b)\le|x-y_a|$,
+and hence $b<\eps$ and $x_r=y_r$;
+here $R$ is chosen small enough that $s$ is defined on $[0,R]$.
 
 Choose a geodesic triangle $[pxy]$ in $M$ such that $|p-x|<\tfrac R2$, $|p-y|<\tfrac R2$;
 let $r=\tfrac12\cdot(|p-x|+|p-y|-|x-y|)$.
@@ -370,8 +387,6 @@ It follows that $x_r=y_r\in [px]\cap[py]$.
 Since $|x-x_r|+|y-y_r|=|x-y|$, we have $[xy]\subset [px]\cup[py]$ --- a contradiction.
 Thus every sufficiently small triangle in $M$ is a tripod, and the statement follows.
 \qeds
-
-
 
 \begin{thm}{Claim}\label{clm:complete}
 Any geodesically complete metric tree $T$ is complete.
@@ -397,7 +412,7 @@ Otherwise, \ref{prop:loc-tree} implies that $M$ is locally a tree.
 The existence of a bifurcation implies that the local tree has valence at least $3$ at some (and therefore any) point.
 
 Let us show that $M$ is a metric tree;
-in other words, $M$ does not contain an embedded circle.
+in other words, $M$ does not contain an embedded circle \cite[2.2.3]{chiswell}.
 
 Assume the contrary; let $2\cdot R$ be the greatest lower bound of lengths of embedded circles in $M$.
 Since $M$ is locally a tree, homogeneity implies that $R>0$.

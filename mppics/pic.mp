@@ -57,6 +57,8 @@ z.r3=z.r1+(.3,0)*u;
 p1=z.o{right}..z.r0..z.r2..z.r1..z.r3;
 p2 =p1 yscaled -1;
 
+z.rr= point 1.4 of p1;
+
 p10=z.r0{(.2,-1)}..{(-.2,-1)}(z.r0 yscaled -1);
 p12=z.r2{(-.2,-1)}..{(.2,-1)}(z.r2 yscaled -1);
 
@@ -88,17 +90,19 @@ rimmark2(subpath (2,3) of p0);
 rimmark3(p10);
 rimmark3(p12);
 
-dOt z.o,z.r0,z.r1,z.r2,z.r0 yscaled -1,z.r1 yscaled -1,z.r2 yscaled -1,z.l0,z.l2;
+dOt z.o,z.r0,z.r1,z.r2,z.r0 yscaled -1,z.r1 yscaled -1,z.r2 yscaled -1,z.l0,z.l2,z.rr,z.rr yscaled -1;
 
 label.top (btex $w$ etex,  z.o);
-label.top (btex $\sigma_0(r_0)$ etex,  z.l0);
-label.top (btex $\sigma_0(r_2)$ etex,  z.l2);
-label.top (btex $\sigma_1(r_0)$ etex,  z.r0+(-6,1));
-label.bot (btex $\sigma_2(r_0)$ etex,  z.r0 yscaled -1+(-6,-1));
+label.top (btex $\sigma_0(r)$ etex,  z.l0);
+label.top (btex $\sigma_0(r')$ etex,  z.l2);
+label.top (btex $\sigma_1(r)$ etex,  z.r0+(-6,1));
+label.bot (btex $\sigma_2(r)$ etex,  z.r0 yscaled -1+(-6,-1));
+label.top (btex $\sigma_1(r_0)$ etex,  z.rr);
+label.bot (btex $\sigma_2(r_0)$ etex,  z.rr yscaled -1);
 label.top (btex $\sigma_1(r_1)$ etex,  z.r1);
 label.bot (btex $\sigma_2(r_1)$ etex,  z.r1 yscaled -1);
-label.top (btex $\sigma_1(r_2)$ etex,  z.r2);
-label.bot (btex $\sigma_2(r_2)$ etex,  z.r2 yscaled -1);
+label.top (btex $\sigma_1(r')$ etex,  z.r2);
+label.bot (btex $\sigma_2(r')$ etex,  z.r2 yscaled -1);
 
 endfig;
 
@@ -188,6 +192,76 @@ label.urt (btex $w$ etex,z.w);
 label(btex $\vdots$ etex,.5[z.x1,z.x2]+(0,2));
 label.top (btex $\iota$ etex,.5[z.u,z.w]+(0,-1));
 label.rt (btex $\iota'$ etex,.5[z.w,z.v]+(-1,0));
+endfig;
+
+beginfig(50)
+
+save u,p;
+path p[];
+u:=1.4cm;
+
+
+z.x=origin;
+z.q1=(1,.6)*u;
+z.q2=z.q1 yscaled -1;
+
+p1=z.x{(1,0)}..tension 2..z.q1;
+z.p=(-arclength p1,0);
+z.qq1= point .7 of p1;
+z.qq2=z.qq1 yscaled -1;
+p10=z.qq1{(.6,-1)}..{(-.6,-1)}z.qq2;
+
+draw z.p--z.x;
+draw p1;
+draw p1 yscaled -1;
+draw p10 dashed evenly;
+
+dOt z.p,z.q1,z.q2,z.qq1,z.qq2,z.x;
+
+label.lft (btex $p$ etex,z.p);
+label.rt (btex $q_1$ etex,z.q1);
+label.rt (btex $q_2$ etex,z.q2);
+label.bot (btex $x$ etex,z.x);
+label.ulft (btex $\sigma_1(t)$ etex, z.qq1);
+label.llft (btex $\sigma_2(t)$ etex, z.qq2);
+label.rt (btex $s(t)$ etex, point .5 of p10);
+
+endfig;
+
+beginfig(60)
+
+save u,p;
+path p[];
+u:=1.4cm;
+
+
+z.x=origin;
+z.q1=(1,.6)*u;
+z.q2=z.q1 yscaled -1;
+
+p1=z.x{(1,0)}..tension 2..z.q1;
+z.p=(-arclength p1,0);
+z.qq1= point .7 of p1;
+z.qq2=z.qq1 yscaled -1;
+p10=z.qq1{(.6,-1)}..{(-.6,-1)}z.qq2;
+
+draw z.p--z.x;
+draw subpath (0,.7) of p1;
+draw p1 yscaled -1;
+draw p10 dashed evenly;
+
+z.xr=.6[z.p,z.x];
+
+dOt z.p,z.q2,z.qq1,z.qq2,z.x,z.xr;
+
+label.lft (btex $p$ etex,z.p);
+label.lrt (btex $y$ etex,z.q2);
+label.top (btex $z$ etex,z.x);
+label.urt (btex $x$ etex, z.qq1);
+label.llft (btex $y_a$ etex, z.qq2+(2,0));
+label.top (btex $x_r$ etex, z.xr);
+label.bot (btex $y_r$ etex, z.xr);
+
 endfig;
 
 end
