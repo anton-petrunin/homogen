@@ -256,7 +256,7 @@ dOt z.p,z.q2,z.qq1,z.qq2,z.x,z.xr;
 
 label.lft (btex $p$ etex,z.p);
 label.lrt (btex $y$ etex,z.q2);
-label.top (btex $z$ etex,z.x);
+label.top (btex $w$ etex,z.x);
 label.urt (btex $x$ etex, z.qq1);
 label.llft (btex $y_a$ etex, z.qq2+(2,0));
 label.top (btex $x_r$ etex, z.xr);
