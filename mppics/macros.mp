@@ -365,10 +365,11 @@ vardef one_rimmark@#(expr p) =
 	
 	elseif (n=6):
 		dm1:=marksize*unitvector direction (arctime m+0.4marksize of p) of p rotated 90;
-		draw (-.5dm1.. .5dm1) shifted point (arctime m+0.4marksize of p) of p;
+		draw (-.6dm1-- .5dm1) shifted point (arctime m+0.4marksize of p) of p;
 		dm1:=marksize*unitvector direction (arctime m-0.35marksize of p) of p;
 		dm2=dm1 rotated 90;
-		draw (.5dm2-.35dm1--(-.55dm2)--.5dm2+.35dm1) shifted point (arctime m-0.35marksize of p) of p;
+		draw (.5dm2-.35dm1--(-.5dm2)--.5dm2+.35dm1) shifted point (arctime m-0.35marksize of p) of p;
+
 	
 	elseif (n=10):
 		dm1=marksize*unitvector direction arctime m of p of p;

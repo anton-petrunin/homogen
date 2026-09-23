@@ -166,16 +166,37 @@ z.x2= z.u+ z.s + 1.5*z.a;
 z.y=z.u+ z.s -.5*z.a;
 z.v=z.x2+z.s;
 z.w=z.x1+z.y-z.u;
-z.vv=z.v yscaled -1;
-z.uu=z.v+z.vv-z.u;
+z.vv=2*z.y-z.u;
+z.uu=2*z.w-z.u;
 
-draw z.p--z.pp--z.u--z.y--z.vv--z.uu--z.w--z.y;
-draw z.uu--z.v--z.x1--z.u--z.x2--z.u;
-draw z.x1--z.w--z.x2--z.v;
+p1=z.p..z.vv+(0,-15)..z.uu;
+
+
+draw z.x1--z.v;
+draw z.x2--z.w withpen pencircle scaled 3bp withcolor 1;
+draw z.x2--z.w;
+draw z.x1--z.w;
+draw z.x2--z.v;
+draw z.p--z.u;
+draw z.u--z.y;
+draw z.y--z.vv;
+draw z.vv--z.uu;
+draw z.uu--z.w;
+draw z.w--z.y;
+draw z.uu--z.v;
+draw z.x1--z.u;
+draw z.u--z.x2;
+draw z.x2--z.u;
+draw p1;
 drawarrow .2[z.u,z.w]--.8[z.u,z.w] dashed evenly scaled .5;
 drawarrow .2[z.w,z.v]--.8[z.w,z.v] dashed evenly scaled .5;
 
-dOt z.p,z.pp,z.u,z.v,z.uu,z.vv,.5[z.uu,z.v],z.w,.5[z.uu,z.vv],.5[z.uu,z.w];
+
+rimmark(z.y--z.u,z.y--z.vv,z.y--z.w,z.x1--z.w,z.x2--z.w,z.x1--z.v,z.x2--z.v,z.x1--z.u,z.x2--z.u);
+rimmark2(z.u--z.p,z.uu--z.w,z.uu--z.v,z.uu--z.vv);
+rimmark6(p1);
+
+dOt z.p,z.u,z.v,z.uu,z.vv,z.w;
 
 Dot z.x1,z.x2,z.y;
 
@@ -187,7 +208,7 @@ label.bot (btex $y$ etex,z.y+(0,-1));
 label.ulft (btex $x_1$ etex,z.x1);
 label.top (btex $x_{n-1}$ etex,z.x2);
 label.top (btex $q$ etex,z.v);
-label.top (btex $q'$ etex,z.vv);
+label.bot (btex $q'$ etex,z.vv);
 label.urt (btex $w$ etex,z.w);
 label(btex $\vdots$ etex,.5[z.x1,z.x2]+(0,2));
 label.top (btex $\iota$ etex,.5[z.u,z.w]+(0,-1));
