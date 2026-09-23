@@ -161,16 +161,17 @@ z.s=(1,0)*u;
 z.p=(0,0);
 z.pp=z.p+z.s;
 z.u=z.pp+z.s;
-z.x1= z.u+ z.s +.5*z.a;
-z.x2= z.u+ z.s + 1.5*z.a;
-z.y=z.u+ z.s -.5*z.a;
-z.v=z.x2+z.s;
-z.w=z.x1+z.y-z.u;
+z.x1= z.u+ z.s +0*z.a;
+z.x2= z.u+ z.s + 1*z.a;
+z.y=z.u+ z.s -1*z.a;
+z.v=2*z.x2-z.u;
+z.w=2*z.x1-z.u;
 z.vv=2*z.y-z.u;
 z.uu=2*z.w-z.u;
 
-p1=z.p..z.vv+(0,-15)..z.uu;
-
+p1=z.p..z.vv+(0,-25)..z.uu;
+p2=z.u{(1,-.5)}..{(1,.5)}z.w;
+p3=z.w{(.5,1)}..{(-.5,1)}z.v;
 
 draw z.x1--z.v;
 draw z.x2--z.w withpen pencircle scaled 3bp withcolor 1;
@@ -188,8 +189,8 @@ draw z.x1--z.u;
 draw z.u--z.x2;
 draw z.x2--z.u;
 draw p1;
-drawarrow .2[z.u,z.w]--.8[z.u,z.w] dashed evenly scaled .5;
-drawarrow .2[z.w,z.v]--.8[z.w,z.v] dashed evenly scaled .5;
+drawarrow subpath (.2,.8) of p2 dashed evenly scaled .5;
+drawarrow subpath (.2,.8) of p3 dashed evenly scaled .5;
 
 
 rimmark(z.y--z.u,z.y--z.vv,z.y--z.w,z.x1--z.w,z.x2--z.w,z.x1--z.v,z.x2--z.v,z.x1--z.u,z.x2--z.u);
@@ -204,15 +205,15 @@ Dot z.x1,z.x2,z.y;
 label.lft (btex $z$ etex,z.p);
 label.bot (btex $p$ etex,z.u);
 label.rt (btex $p'$ etex,z.uu);
-label.bot (btex $y$ etex,z.y+(0,-1));
-label.ulft (btex $x_1$ etex,z.x1);
-label.top (btex $x_{n-1}$ etex,z.x2);
+label.llft (btex $y$ etex,z.y+(0,-1));
+label.urt (btex $x_1$ etex,z.x1+(-13,1));
+whitelabel.urt (btex $x_{n-1}$ etex,z.x2+(-13,2));
 label.top (btex $q$ etex,z.v);
 label.bot (btex $q'$ etex,z.vv);
 label.urt (btex $w$ etex,z.w);
 label(btex $\vdots$ etex,.5[z.x1,z.x2]+(0,2));
-label.top (btex $\iota$ etex,.5[z.u,z.w]+(0,-1));
-label.rt (btex $\iota'$ etex,.5[z.w,z.v]+(-1,0));
+label.bot (btex $\iota$ etex, point .5 of p2);
+label.rt (btex $\iota'$ etex, point .5 of p3);
 endfig;
 
 beginfig(50)
