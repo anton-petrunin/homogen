@@ -203,15 +203,15 @@ Dot z.x1,z.x2,z.y;
 
 
 label.lft (btex $z$ etex,z.p);
-label.bot (btex $p$ etex,z.u);
+label.llft (btex $p$ etex,z.u);
 label.rt (btex $p'$ etex,z.uu);
 label.llft (btex $y$ etex,z.y+(0,-1));
 label.urt (btex $x_1$ etex,z.x1+(-13,1));
-whitelabel.urt (btex $x_{n-1}$ etex,z.x2+(-13,2));
+label.urt (btex $x_n$ etex,z.x2+(-13,1));
 label.top (btex $q$ etex,z.v);
 label.bot (btex $q'$ etex,z.vv);
-label.urt (btex $w$ etex,z.w);
-label(btex $\vdots$ etex,.5[z.x1,z.x2]+(0,2));
+label.lrt (btex $w$ etex,z.w);
+label(btex $\vdots$ etex,.5[z.x1,z.x2]+(0,3));
 label.bot (btex $\iota$ etex, point .5 of p2);
 label.rt (btex $\iota'$ etex, point .5 of p3);
 endfig;
