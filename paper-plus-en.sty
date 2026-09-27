@@ -79,7 +79,9 @@ isbn=false]{biblatex}
 \def\dir{\operatorname{\rm dir}}
 \def\div{\mathop{\rm div}}
 \def\dist{\operatorname{\rm dist}}
+\def\Bis{\mathop{\rm Bis}\nolimits}
 \def\Dom{\mathop{\rm Dom}\nolimits}
+\def\gap{\mathop{\rm gap}\nolimits}
 \def\gexp{\mathop{\rm gexp}\nolimits}
 \def\pack{\operatorname{\rm pack}}
 \def\Ric{\operatorname{\rm Ric}}
@@ -125,12 +127,13 @@ isbn=false]{biblatex}
 \def\i{\subset}
 \def\vr{\overrightarrow}
 \def\length{\mathop{\rm length}\nolimits}
-\newcommand*{\set}[2]{\left\{\,\left.{#1}\vphantom{#2}\,\right|\,{#2}\,\right\}}
+\newcommand*{\set}[2]{\left\{\,{#1}\,:\,{#2}\,\right\}}
 \def\:{\colon}
 \def\id{\mathrm{id}}
 \renewcommand*\vec[1]{\text{\sc{#1}}}
 \newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}
-\def\split{\operatorname{\rm split}}
+\def\spray{\operatorname{\rm spray}}
+\def\slot{\operatorname{\rm slot}}
 
 \def\vv{\llbracket}
 \def\ww{\rrbracket}
@@ -160,7 +163,7 @@ isbn=false]{biblatex}
 \newcounter{eqtn}
 \renewcommand{\@eqnnum}{\theeqtn}
 \renewcommand{\theeqtn}{\numform{eqtn}}
-\newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\eqno\text{\numform{eqtn}\label{#1}}}
+\newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno\text{\numform{eqtn}\label{#1}}}
 
 \let\oldcdot\cdot
 \def\cdot{{\hskip0.5pt\oldcdot\hskip0.5pt}}
