@@ -73,6 +73,12 @@ The theorem provides a very economical metric foundation for geometry.
 We conjecture that any all-set-homogeneous length space is complete;
 if true, this would finish the story.
 
+Let us mention that \emph{any locally compact 3-point-homogeneous length space is classical};
+a metric space is called \emph{$n$-point homogeneous}
+if any isometry between its subsets with at most $n$ points in each can be extended to an isometry of the whole space.
+This result was proved by Herbert Busemann \cite{busemann}; it also follows from the more general result of Jacques Tits \cite{tits} about 2-point-homogeneous spaces.
+
+
 We show first that an all-set-homogeneous geodesic space must have locally unique geodesics (Section~\ref{Locally unique geodesics}).
 If geodesics bifurcate, we then show that the space is a universal metric tree of finite valence; otherwise, Birkhoff's theorem finishes the proof of the first statement (Section~\ref{sec:locally unique geodesics}).
 Further, we show that any complete all-set-homogeneous length space is geodesic (Section~\ref{Length-spaces}).
@@ -137,6 +143,34 @@ Choose a subinterval $\JJ\subset \II$ and its shift $\JJ'\subset \II$ by $a>0$ s
 The map $\gamma(t)\mapsto \gamma(t+a)$ extends to an isometry $F $ of $M$,
 and we can extend $\gamma$ to a local geodesic defined by $\bar\gamma(t+n\cdot a)\df F^n\circ \gamma(t)$
 for $t\in \JJ$ and every integer~$n$.
+\qeds
+
+Let us define the \emph{bisector} of two points $u$ and $v$ in a metric space $M$ as the set
+\[\Bis(u,v)=\set{x\in M}{|u-x|=|v-x|}.\]
+
+\begin{thm}{Observation}\label{lem:bisector}
+Let $M$ be an all-set-homogeneous length space and $u,v\in M$ be distinct.
+If  the two values $|u-x|-|v-x|$ and $|u-y|-|v-y|$ have opposite signs or one of them vanishes, then
+\[|x-y|=\inf\set{|x-h|+|h-y|}{h\in \Bis(u,v)}.\]
+\end{thm}
+
+The following observation is a version of Birkhoff's reflection construction
+\cite[Theorem 20]{birkhoff}.
+
+\begin{thm}{Observation}\label{lem:reflection}
+Let $M$ be an all-set-homogeneous length space and $u,v\in M$ be distinct.
+Then there is an involutive isometry $\rho$ that fixes $\Bis(u,v)$ pointwise and swaps $u$ with $v$.
+Moreover,
+\[\tfrac12\cdot |x-\rho(x)|=\inf\set{|x-h|}{h\in \Bis(u,v)}\]
+for any $x\in M$.
+\end{thm}
+
+\parit{Proof.}
+The partial isometry interchanging $u,v$ and fixing $\Bis(u,v)$ extends to an isometry $\iota$ of $M$.
+It interchanges the two strict sides of $\Bis(u,v)$.
+Define $\rho(x)=\iota(x)$ if $|u-x|\le |v-x|$ and $\rho(x)=\iota^{-1}(x)$ otherwise.
+By construction, $\rho$ is an involution and its fixed set is $\Bis(u,v)$.
+Since both branches of $\rho$ preserve distances to every point of $\Bis(u,v)$, it remains to apply \ref{lem:bisector}.
 \qeds
 
 \section{Locally unique geodesics}\label{Locally unique geodesics}
@@ -350,9 +384,7 @@ If it has bifurcating geodesics, then $M$ is locally a metric tree;
 that is, any point of $M$ has a neighborhood isometric to a metric tree.
 \end{thm}
 
-The same proof works for $3$-point homogeneous spaces;
-a metric space is called \emph{$n$-point homogeneous}
-if any isometry between its subsets with at most $n$ points in each can be extended to an isometry of the whole space.
+The same proof works for $3$-point homogeneous spaces.
 
 \parit{Proof.}
 Homogeneity and local uniqueness of geodesics imply that there is $R>0$ such that if $|x-y|<R$, then $[xy]$ is uniquely defined.
@@ -462,52 +494,6 @@ The following proposition provides the second statement in \ref{thm:main} modulo
 \begin{thm}{Proposition}\label{prop:ash>geodesic}
 A complete all-set-homogeneous length space is geodesic.
 \end{thm}
-
-\subsection*{Reflections}
-
-Let us define the \emph{bisector} of two points $u$ and $v$ in a metric space $M$ as the set
-\[\Bis(u,v)=\set{x\in M}{|u-x|=|v-x|}.\]
-
-\begin{thm}{Observation}\label{lem:bisector}
-Let $M$ be an all-set-homogeneous length space and $u,v\in M$ be distinct.
-If  the two values $|u-x|-|v-x|$ and $|u-y|-|v-y|$ have opposite signs or one of them vanishes, then
-\[|x-y|=\inf\set{|x-h|+|h-y|}{h\in \Bis(u,v)}.\]
-\end{thm}
-
-The following observation is a version of Birkhoff's reflection construction
-\cite[Theorem 20]{birkhoff}.
-
-\begin{thm}{Observation}\label{lem:reflection}
-Let $M$ be an all-set-homogeneous length space and $u,v\in M$ be distinct.
-Then there is an involutive isometry $\rho$ that fixes $\Bis(u,v)$ pointwise and swaps $u$ with $v$.
-Moreover,
-\[\tfrac12\cdot |x-\rho(x)|=\inf\set{|x-h|}{h\in \Bis(u,v)}\]
-for any $x\in M$.
-\end{thm}
-
-\parit{Proof.}
-The partial isometry interchanging $u,v$ and fixing $\Bis(u,v)$ extends to an isometry $\iota$ of $M$.
-It interchanges the two strict sides of $\Bis(u,v)$.
-Define $\rho(x)=\iota(x)$ if $|u-x|\le |v-x|$ and $\rho(x)=\iota^{-1}(x)$ otherwise.
-By construction, $\rho$ is an involution and its fixed set is $\Bis(u,v)$.
-Since both branches of $\rho$ preserve distances to every point of $\Bis(u,v)$, it remains to apply \ref{lem:bisector}.
-\qeds
-
-\begin{thm}{Observation}\label{cor:plus-one}
-Let $f$ be a distance-preserving map from a finite set of real numbers $X$ into an all-set-homogeneous length space $M$.
-Given three consecutive numbers $t_{i-1},t_i,t_{i+1}\in X$, set $t_i'=t_{i-1}-t_i +t_{i+1}$.
-Then the map $f$ can be extended to a distance-preserving map on $X\cup\{t_i'\}$.
-\end{thm}
-
-\parit{Proof.}
-Set $x_i=f(t_i)$ and let $f(t_i')\df x_i'\df\rho(x_i)$, where $\rho$ is the reflection that swaps $x_{i-1}$ and $x_{i+1}$.
-We can assume $|x_{i-1}-x_i|\ge |x_i-x_{i+1}|$.
-Then
-\[|x_{i-1}-x'_i|+|x'_i-x_i|+|x_i-x_{i+1}|=|x_{i-1}-x_{i+1}|;\]
-the triangle inequality gives the lower bound, and an almost shortest path from
-$x_{i-1}$ to $x_i$ gives the upper bound.
-Hence the statement follows.
-\qeds
 
 \subsection*{Separated sequence}
 
@@ -688,7 +674,23 @@ and similarly,
 Thus \ref{sigma=const} follows.
 \qeds
 
-\subsection*{Assembling the proof}
+\subsection*{Expanding collinear sets}
+
+\begin{thm}{Lemma}\label{cor:plus-one}
+Let $f$ be a distance-preserving map from a finite set of real numbers $X$ into an all-set-homogeneous length space $M$.
+Given three consecutive numbers $t_{i-1},t_i,t_{i+1}\in X$, set $t_i'=t_{i-1}-t_i +t_{i+1}$.
+Then the map $f$ can be extended to a distance-preserving map on $X\cup\{t_i'\}$.
+\end{thm}
+
+\parit{Proof.}
+Set $x_i=f(t_i)$ and let $f(t_i')\df x_i'\df\rho(x_i)$, where $\rho$ is the reflection that swaps $x_{i-1}$ and $x_{i+1}$.
+We can assume $|x_{i-1}-x_i|\ge |x_i-x_{i+1}|$.
+Then
+\[|x_{i-1}-x'_i|+|x'_i-x_i|+|x_i-x_{i+1}|=|x_{i-1}-x_{i+1}|;\]
+the triangle inequality gives the lower bound, and an almost shortest path from
+$x_{i-1}$ to $x_i$ gives the upper bound.
+Hence the statement follows.
+\qeds
 
 \parit{Proof of \ref{prop:ash>geodesic}.}
 Let $M$ be a complete all-set-homogeneous length space.
