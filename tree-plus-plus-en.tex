@@ -46,24 +46,13 @@ Examples of all-set-homogeneous spaces include complete simply connected Riemann
 These will be referred to as \emph{classical spaces}.
 
 Garrett Birkhoff proved that \emph{any all-set-homogeneous geodesic space with locally unique nonbifurcating geodesics is classical} \cite{birkhoff}.
-Here we use the following terminology:
-A \emph{geodesic} in a metric space $M$ is a distance-preserving map from a real interval to $M$.
-The image of a geodesic with endpoints $x$ and $y$ can be denoted by $[xy]$ and will also be called a \emph{geodesic}.
-If for any $x,y\in M$ there is a geodesic $[xy]$, then $M$ is called a \emph{geodesic space}.
-If any point $p\in M$ admits a neighborhood $U$ such that the geodesic $[xy]$ is uniquely defined for any $x,y\in U$,
-then $M$ has \emph{locally unique geodesics}.
-If $[px]\subset [py]$ or $[px]\supset [py]$ whenever $[px]\cap [py]$ contains a nontrivial geodesic $[pw]$,
-then we say that geodesics in $M$ are \emph{nonbifurcating}.
-A metric space is called a \emph{length space} if the distance between any two points can be approximated arbitrarily well by lengths of curves joining them.
+The used terminology is given in the next section.
 
 We are going to remove two strong local restrictions on geodesics: local uniqueness and absence of bifurcation.
 
-Recall that a uniquely geodesic space $T$ is a \emph{metric tree} if every geodesic triangle in $T$ is a \emph{tripod};
-that is, the union of any two sides of any geodesic triangle in $T$ contains the remaining side.
-The \emph{valence} of $x\in T$ is defined as the cardinality of the set of connected components in $T\setminus \{x\}$.
-
 For any cardinal $n\ge2$, there is a unique, up to isometry,
-complete metric tree $\TT_n$ with valence $n$ at every point \cite{dyubina-polterovich}.
+complete metric tree $\TT_n$ with valence $n$ at every point \cite{dyubina-polterovich};
+metric trees are defined in the next section.
 Moreover, $\TT_n$ is homogeneous, and if $n<\infty$, then it is all-set-homogeneous; the last statement was proved in \cite{lebedeva-petrunin2024}.
 
 \begin{thm}{Theorem}\label{thm:main}
@@ -91,7 +80,21 @@ In Section~\ref{sec:locally unique geodesics}, we consider the two possibilities
 if geodesics bifurcate, we prove that the space is a universal metric tree of finite valence, and if they do not, Birkhoff's theorem gives a classical space.
 Finally, in Section~\ref{Length-spaces}, we prove that every complete all-set-homogeneous length space is geodesic, which yields the second part of the theorem.
 
-\section{Observations}
+\section{Terminology ans observations}
+
+A \emph{geodesic} in a metric space $M$ is a distance-preserving map from a real interval to $M$.
+The image of a geodesic with endpoints $x$ and $y$ can be denoted by $[xy]$ and will also be called a \emph{geodesic}.
+If for any $x,y\in M$ there is a geodesic $[xy]$, then $M$ is called a \emph{geodesic space}.
+If any point $p\in M$ admits a neighborhood $U$ such that the geodesic $[xy]$ is uniquely defined for any $x,y\in U$,
+then $M$ has \emph{locally unique geodesics}.
+If $[px]\subset [py]$ or $[px]\supset [py]$ whenever $[px]\cap [py]$ contains a nontrivial geodesic $[pw]$,
+then we say that geodesics in $M$ are \emph{nonbifurcating}.
+A metric space is called a \emph{length space} if the distance between any two points can be approximated arbitrarily well by lengths of curves joining them.
+
+A uniquely geodesic space $T$ is a \emph{metric tree} if every geodesic triangle in $T$ is a \emph{tripod};
+that is, the union of any two sides of any geodesic triangle in $T$ contains the remaining side.
+The \emph{valence} of $x\in T$ is defined as the cardinality of the set of connected components in $T\setminus \{x\}$.
+
 
 A \emph{sphere} and a \emph{ball} with center $p$ and radius $r$ in a metric space $M$ are defined as
 \begin{align*}
