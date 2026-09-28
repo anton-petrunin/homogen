@@ -290,7 +290,7 @@ beginfig(70)
 
 save u,p,a,b;
 path p[];
-u:=1.4cm;
+u:=2cm;
 a:=50;
 b:=15;
 
@@ -304,7 +304,7 @@ z.w0=(0,2)*u;
 z.w1=z.w0 rotated a;
 z.w2=z.w0 rotated -b;
 
-z.shift=(-4,0)*u;
+z.shift=(-3,0)*u;
 
 draw z.u--z.v0--z.w1--z.u--z.w2--z.v0;
 draw z.w1--z.w2;
@@ -316,14 +316,14 @@ dOt z.u,z.v0,z.w1,z.w2,z.u+z.shift,z.w0+z.shift,z.v1+z.shift,z.v2+z.shift;
 whitelabel (btex $a$ etex,.5[z.u,z.v0]);
 whitelabel (btex $c$ etex,.5[z.u,z.w1]);
 whitelabel (btex $c$ etex,.5[z.u,z.w2]);
-whitelabel (btex $s$ etex,.5[z.w1,z.v0]);
-whitelabel (btex $t$ etex,.6[z.w2,z.v0]);
+whitelabel (btex $b+s$ etex shifted (6,4) rotated angle(z.v0-z.w1), .5[z.w1,z.v0]+(0,1));
+whitelabel (btex $b+t$ etex shifted (6,0) shifted -center btex $b+t$ etex rotated angle(z.w2-z.v0),.6[z.w2,z.v0]);
 whitelabel (btex $L$ etex,.5[z.w1,z.w2]);
 whitelabel (btex $c$ etex,.5[z.u,z.w0]+z.shift);
 whitelabel (btex $a$ etex,.5[z.u,z.v1]+z.shift);
 whitelabel (btex $a$ etex,.5[z.u,z.v2]+z.shift);
-whitelabel (btex $s$ etex,.5[z.v1,z.w0]+z.shift);
-whitelabel (btex $t$ etex,.4[z.v2,z.w0]+z.shift);
+whitelabel (btex $b+s$ etex shifted (3,0) shifted -center btex $b+s$ etex rotated angle(z.w0-z.v1),.5[z.v1,z.w0]+z.shift);
+whitelabel (btex $b+t$ etex shifted (3,-1) shifted -center btex $b+t$ etex rotated angle(z.w0-z.v2),.5[z.v2,z.w0]+z.shift);
 whitelabel (btex $\ell$ etex,.5[z.v1,z.v2]+z.shift);
 
 endfig;
