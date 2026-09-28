@@ -286,4 +286,86 @@ label.bot (btex $y_r$ etex, z.xr);
 
 endfig;
 
+beginfig(70)
+
+save u,p,a,b;
+path p[];
+u:=1.4cm;
+a:=50;
+b:=15;
+
+z.u=origin;
+
+z.v0=(0,1)*u;
+z.v1=z.v0 rotated a;
+z.v2=z.v0 rotated b;
+
+z.w0=(0,2)*u;
+z.w1=z.w0 rotated a;
+z.w2=z.w0 rotated -b;
+
+z.shift=(-4,0)*u;
+
+draw z.u--z.v0--z.w1--z.u--z.w2--z.v0;
+draw z.w1--z.w2;
+draw (z.u--z.w0--z.v1--z.u--z.v2--z.w0) shifted z.shift;
+draw (z.v1--z.v2) shifted z.shift;
+
+dOt z.u,z.v0,z.w1,z.w2,z.u+z.shift,z.w0+z.shift,z.v1+z.shift,z.v2+z.shift;
+
+whitelabel (btex $a$ etex,.5[z.u,z.v0]);
+whitelabel (btex $c$ etex,.5[z.u,z.w1]);
+whitelabel (btex $c$ etex,.5[z.u,z.w2]);
+whitelabel (btex $s$ etex,.5[z.w1,z.v0]);
+whitelabel (btex $t$ etex,.6[z.w2,z.v0]);
+whitelabel (btex $L$ etex,.5[z.w1,z.w2]);
+whitelabel (btex $c$ etex,.5[z.u,z.w0]+z.shift);
+whitelabel (btex $a$ etex,.5[z.u,z.v1]+z.shift);
+whitelabel (btex $a$ etex,.5[z.u,z.v2]+z.shift);
+whitelabel (btex $s$ etex,.5[z.v1,z.w0]+z.shift);
+whitelabel (btex $t$ etex,.4[z.v2,z.w0]+z.shift);
+whitelabel (btex $\ell$ etex,.5[z.v1,z.v2]+z.shift);
+
+endfig;
+
+beginfig(80)
+
+save u,p;
+path p[];
+u:=1.4cm;
+
+z.u=origin;
+z.v=(0,1)*u;
+z.x=z.v rotated 45;
+z.y=z.v rotated -3;
+z.z=z.v rotated -20;
+
+z.w=(0,2.5)*u;
+z.ww=(0,2)*u rotated 10;
+
+p1=z.w..z.ww..z.x;
+
+draw p1;
+draw ddarc(z.x,z.y,z.z)(15,25);
+draw ddarc(z.ww rotated 15,z.ww,z.ww rotated -15)(15,15);
+draw z.z--z.ww--z.y dashed evenly;
+draw z.x--z.u;
+draw z.y--z.u;
+draw z.z--z.u;
+
+dOt z.u,z.x,z.y,z.z,z.w,z.ww;
+
+whitelabel (btex $a$ etex,.4[z.x,z.u]);
+whitelabel (btex $a$ etex,.4[z.y,z.u]);
+whitelabel (btex $a$ etex,.4[z.z,z.u]);
+label.bot (btex $u$ etex,z.u);
+label.top (btex $w$ etex,z.w);
+label.ulft (btex $w'$ etex,z.ww);
+label.lft (btex $x$ etex,z.x);
+label.llft (btex $y$ etex,z.y);
+label.lrt (btex $z$ etex,z.z+(-2,-1));
+label.lft (btex $\gamma$ etex, point 1.45 of p1);
+label.urt (btex $S(u,c')$ etex, z.ww rotated -20);
+label.urt (btex $S(u,a)$ etex, (0,-2)+z.z rotated -15);
+endfig;
 end
