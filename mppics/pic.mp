@@ -326,6 +326,15 @@ whitelabel (btex $b+s$ etex shifted (3,0) shifted -center btex $b+s$ etex rotate
 whitelabel (btex $b+t$ etex shifted (3,-1) shifted -center btex $b+t$ etex rotated angle(z.w0-z.v2),.5[z.v2,z.w0]+z.shift);
 whitelabel (btex $\ell$ etex,.5[z.v1,z.v2]+z.shift);
 
+label.bot (btex $u$ etex,z.u);
+label.bot (btex $u$ etex,z.u+z.shift);
+label.top (btex $w$ etex,z.w0+z.shift);
+label.lft (btex $w_1$ etex,z.w1);
+label.urt (btex $w_2$ etex,z.w2);
+label.llft (btex $v$ etex,z.v0);
+label.lft (btex $v_1$ etex,z.v1+z.shift);
+label.rt (btex $v_2$ etex,z.v2+z.shift);
+
 endfig;
 
 beginfig(80)
