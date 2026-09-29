@@ -20,7 +20,7 @@ pdfauthor={\theauthors}
 }
 
 
-\overfullrule=100mm
+%\overfullrule=100mm
 
 \begin{document}
 
@@ -46,7 +46,7 @@ Examples of all-set-homogeneous spaces include complete simply connected Riemann
 These will be referred to as \emph{classical spaces}.
 
 Garrett Birkhoff proved that \emph{any all-set-homogeneous geodesic space with locally unique nonbifurcating geodesics is classical} \cite{birkhoff}.
-The used terminology is given in the next section.
+The terminology used here is explained in the next section.
 
 We are going to remove two strong local restrictions on geodesics: local uniqueness and absence of bifurcation.
 
@@ -80,7 +80,7 @@ In Section~\ref{sec:locally unique geodesics}, we consider the two possibilities
 if geodesics bifurcate, we prove that the space is a universal metric tree of finite valence, and if they do not, Birkhoff's theorem gives a classical space.
 Finally, in Section~\ref{Length-spaces}, we prove that every complete all-set-homogeneous length space is geodesic, which yields the second part of the theorem.
 
-\section{Terminology ans observations}
+\section{Terminology and observations}
 
 A \emph{geodesic} in a metric space $M$ is a distance-preserving map from a real interval to $M$.
 The image of a geodesic with endpoints $x$ and $y$ can be denoted by $[xy]$ and will also be called a \emph{geodesic}.
@@ -233,8 +233,8 @@ Consider three distinct points $p$, $q_1$, and $q_2$ in an all-set-homogeneous g
 Let $x$ be the splitting point provided by \ref{lem:split-time}.
 If $|p-q_1|\z=|p-q_2|$ and $x\ne p$, then a triple of geodesics $[xq_1]$, $[xq_2]$, and $[xp]$ will be called a \emph{fork}.
 Note that the unions $[xp]\cup [xq_1]$ and $[xp]\cup [xq_2]$ form geodesics $[pq_1]$ and $[pq_2]$.
-Let $\sigma_0$, $\sigma_1$, and $\sigma_2$ be the arc-length parametrizations of $[xp]$, $[xq_1]$, and $[xq_2]$ starting from~$x$;
-so, $x\z=\sigma_0(0)\z=\sigma_1(0)\z=\sigma_2(0)$.
+Let $\gamma_0$, $\gamma_1$, and $\gamma_2$ be the arc-length parametrizations of $[xp]$, $[xq_1]$, and $[xq_2]$ starting from~$x$;
+so, $x\z=\gamma_0(0)\z=\gamma_1(0)\z=\gamma_2(0)$.
 
 \begin{wrapfigure}{o}{40mm}
 \centering
@@ -243,9 +243,9 @@ so, $x\z=\sigma_0(0)\z=\sigma_1(0)\z=\sigma_2(0)$.
 \vskip-0mm
 \end{wrapfigure}
 
-Let us restrict each $\sigma_i$ to a segment $[0,\ell]$ for some $0<\ell<\tfrac12\cdot\diam M$.
-Note that $\sigma_1(t)=\sigma_2(t)$ only if $t=0$.
-In particular, \[s(t)\df|\sigma_1(t)-\sigma_2(t)|>0
+Let us restrict each $\gamma_i$ to a segment $[0,\ell]$ for some $0<\ell<\tfrac12\cdot\diam M$.
+Note that $\gamma_1(t)=\gamma_2(t)$ only if $t=0$.
+In particular, \[s(t)\df|\gamma_1(t)-\gamma_2(t)|>0
 \quad\text{if}\quad
 t>0.\]
 The function $s$ will be called the \emph{splitting function} of the fork.
@@ -268,41 +268,42 @@ Observe that $s$ is strictly increasing.
 Indeed, suppose $s(r_0)\ge s(r_1)$ for some $r_0<r_1$.
 By the intermediate value theorem, we can find $0<r\le r_0<r'\le r_1$
  such that $s(r)=s(r')$.
-If $\sigma_0$, $\sigma_1$, and $\sigma_2$ are as above,
+If $\gamma_0$, $\gamma_1$, and $\gamma_2$ are as above,
 then
-\[\sigma_1(r)\mapsto\sigma_1(r'),
+\[\gamma_1(r)\mapsto\gamma_1(r'),
 \qquad
-\sigma_2(r)\mapsto\sigma_2(r'),
+\gamma_2(r)\mapsto\gamma_2(r'),
 \qquad
-\sigma_0(r')\mapsto\sigma_0(r)\]
+\gamma_0(r')\mapsto\gamma_0(r)\]
 defines a distance-preserving map on a 3-point set,
-\begin{figure}[t!]
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-20}
-\end{figure}
 which can be extended to an isometry of $M$.
 The maximal splitting distances for the two triples are $r'$ and $r$, and the isometry must preserve this quantity.
 Therefore $r'=r$ --- a contradiction.
 Here we apply \ref{lem:split-time} to two triples:
-$\sigma_0(r')$, $\sigma_1(r)$, $\sigma_2(r)$
-and $\sigma_0(r)$, $\sigma_1(r')$, $\sigma_2(r')$.
+$\gamma_0(r')$, $\gamma_1(r)$, $\gamma_2(r)$
+and $\gamma_0(r)$, $\gamma_1(r')$, $\gamma_2(r')$.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-20}
+\end{figure}
 
 The same argument proves the second statement.
-Indeed, assume $s'$ is a splitting function for another fork described by geodesics $\sigma'_0$, $\sigma'_1$, and $\sigma'_2$.
+Indeed, assume $s'$ is a splitting function for another fork described by geodesics $\gamma'_0$, $\gamma'_1$, and $\gamma'_2$.
 If $s(r)=s'(r')$ for $r$ and $r'$ in the common domain, then
-\[\sigma'_1(r')\mapsto\sigma_1(r),\qquad
-\sigma'_2(r')\mapsto\sigma_2(r),\qquad
-\sigma'_0(r)\z\mapsto\sigma_0(r')\]
+\[\gamma'_1(r')\mapsto\gamma_1(r),\qquad
+\gamma'_2(r')\mapsto\gamma_2(r),\qquad
+\gamma'_0(r)\z\mapsto\gamma_0(r')\]
 defines a distance-preserving map, which extends to an isometry of $M$, implying $r=r'$.
 Since both functions are continuous and strictly increasing from $0$, it follows that $s=s'$ on their common domain.
 \qeds
 
 \begin{thm}{Corollary}\label{cor:splitting-function}
 Let $M$ be an all-set-homogeneous geodesic space, and let $s$ be its splitting function.
-Suppose $\sigma_1,\sigma_2\colon[0,r]\to M$ are two geodesics such that $\sigma_1(0)=\sigma_2(0)$ and $|\sigma_1(r)-\sigma_2(r)|=s(r)$.
+Suppose $\gamma_1,\gamma_2\colon[0,r]\to M$ are two geodesics such that $\gamma_1(0)=\gamma_2(0)$ and $|\gamma_1(r)-\gamma_2(r)|=s(r)$.
 Then
-\[|\sigma_1(r')-\sigma_2(r')|= s(r')
+\[|\gamma_1(r')-\gamma_2(r')|= s(r')
 \quad\text{for any}\quad
 r'\in[0,r].\]
 
@@ -333,7 +334,7 @@ Therefore, $|q_1-q_2|=s(r)$ for some $r\ll R$.
 Let $p_i$ be the point provided by \ref{lem:split-time} for $w_i$, $q_1$ and $q_2$.
 Note that $p_1$, $p_2$, $q_1$, $q_2$ form an $r$-rhombus.
 
-\begin{figure}[t!]
+\begin{figure}[h!]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-30}
@@ -358,14 +359,14 @@ $x_1,x_2,\ldots\in M$ such that
 |x_i-x_j|=s(r)\] for $ i\ne j$.
 \end{thm}
 
-\begin{figure}[b!]
+\begin{figure}[t!]
 \centering\vskip-0mm
 \includegraphics{mppics/pic-40}
 \vskip-0mm
 \end{figure}
 
 \parit{Proof.}
-In the proof we construct and use the configuration of points as in the picture.
+In the proof we construct and use the configuration of points shown in the picture.
 Each marked segment has length $r$ times its Roman numeral, and the black points are pairwise at distance $s(r)$.
 
 
@@ -400,7 +401,7 @@ By the self-improving lemma, the set of midpoints of $p$ and $q$ contains an inf
 which contradicts \ref{obs:spheres} and~\ref{obs:equilateral}.
 \qeds
 
-\section{Spaces with locally unique geodesics}\label{sec:locally unique geodesics}
+\section{From bifurcation to a tree}\label{sec:locally unique geodesics}
 
 \subsection*{Local tree}
 
@@ -516,7 +517,7 @@ indeed, one can take points at a fixed distance in distinct branches of the tree
 This contradicts \ref{obs:equilateral}.
 \qeds
 
-\section{Construction of a geodesic}\label{Length-spaces}
+\section{Existence of geodesics}\label{Length-spaces}
 
 The following proposition provides the second statement in \ref{thm:main} modulo the first one.
 
@@ -532,32 +533,32 @@ Consider the set $\Lambda_{a,c}$ of all $\lambda\ge 0$
 such that $a=|u-v|$, $c=|u-w|$, and $b+\lambda=|v-w|$ for some points $u,v,w\in M$;
 further assume $\Lambda_{a,c}\ne\varnothing$.
 
-For a pair $s,t\in\Lambda_{a,c}$ we may consider the distance $|s-t|$ induced from $\RR$,
+For a pair $\lambda,\mu\in\Lambda_{a,c}$ we may consider the distance $|\lambda-\mu|$ induced from $\RR$,
 \begin{figure}[ht!]
 \centering\vskip-0mm
 \includegraphics{mppics/pic-70}
 \vskip-0mm
 \end{figure}
-but there are also two other distances $\theta(s,t)$ and $\Theta(s,t)$ defined as the greatest lower bounds of the values $\ell$ and $L$ for configurations of points shown in the picture.
+but there are also two other distances $\theta(\lambda,\mu)$ and $\Theta(\lambda,\mu)$ defined as the greatest lower bounds of the values $\ell$ and $L$ for configurations of points shown in the picture.
 Formally, we define them as
 \begin{align*}
-\theta(s,t)
+\theta(\lambda,\mu)
 &\df
 \inf\set{|v_1-v_2|}{
 \substack{
-|u-v_i|=a,\ |v_1-w|=b+s,
+|u-v_i|=a,\ |v_1-w|=b+\lambda,
 \\
-|u-w|=c,\ |v_2-w|=b+t.
+|u-w|=c,\ |v_2-w|=b+\mu.
 }
 },
 \\
-\Theta(s,t)
+\Theta(\lambda,\mu)
 &\df
 \inf\set{|w_1-w_2|}{
 \substack{
-|u-v|=a,\ |v-w_1|=b+s,
+|u-v|=a,\ |v-w_1|=b+\lambda,
 \\
-|u-w_i|=c,\ |v-w_2|=b+t.
+|u-w_i|=c,\ |v-w_2|=b+\mu.
 }
 }.
 \end{align*}

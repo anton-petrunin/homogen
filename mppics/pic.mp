@@ -92,17 +92,17 @@ rimmark3(p12);
 
 dOt z.o,z.r0,z.r1,z.r2,z.r0 yscaled -1,z.r1 yscaled -1,z.r2 yscaled -1,z.l0,z.l2,z.rr,z.rr yscaled -1;
 
-label.top (btex $w$ etex,  z.o);
-label.top (btex $\sigma_0(r)$ etex,  z.l0);
-label.top (btex $\sigma_0(r')$ etex,  z.l2);
-label.top (btex $\sigma_1(r)$ etex,  z.r0+(-6,1));
-label.bot (btex $\sigma_2(r)$ etex,  z.r0 yscaled -1+(-6,-1));
-label.top (btex $\sigma_1(r_0)$ etex,  z.rr);
-label.bot (btex $\sigma_2(r_0)$ etex,  z.rr yscaled -1);
-label.top (btex $\sigma_1(r_1)$ etex,  z.r1);
-label.bot (btex $\sigma_2(r_1)$ etex,  z.r1 yscaled -1);
-label.top (btex $\sigma_1(r')$ etex,  z.r2);
-label.bot (btex $\sigma_2(r')$ etex,  z.r2 yscaled -1);
+label.top (btex $x$ etex,  z.o);
+label.top (btex $\gamma_0(r)$ etex,  z.l0);
+label.top (btex $\gamma_0(r')$ etex,  z.l2);
+label.top (btex $\gamma_1(r)$ etex,  z.r0+(-6,1));
+label.bot (btex $\gamma_2(r)$ etex,  z.r0 yscaled -1+(-6,-1));
+label.top (btex $\gamma_1(r_0)$ etex,  z.rr);
+label.bot (btex $\gamma_2(r_0)$ etex,  z.rr yscaled -1);
+label.top (btex $\gamma_1(r_1)$ etex,  z.r1);
+label.bot (btex $\gamma_2(r_1)$ etex,  z.r1 yscaled -1);
+label.top (btex $\gamma_1(r')$ etex,  z.r2);
+label.bot (btex $\gamma_2(r')$ etex,  z.r2 yscaled -1);
 
 endfig;
 
@@ -244,8 +244,8 @@ label.lft (btex $p$ etex,z.p);
 label.rt (btex $q_1$ etex,z.q1);
 label.rt (btex $q_2$ etex,z.q2);
 label.bot (btex $x$ etex,z.x);
-label.ulft (btex $\sigma_1(t)$ etex, z.qq1);
-label.llft (btex $\sigma_2(t)$ etex, z.qq2);
+label.ulft (btex $\gamma_1(t)$ etex, z.qq1);
+label.llft (btex $\gamma_2(t)$ etex, z.qq2);
 label.rt (btex $s(t)$ etex, point .5 of p10);
 
 endfig;
@@ -316,14 +316,14 @@ dOt z.u,z.v0,z.w1,z.w2,z.u+z.shift,z.w0+z.shift,z.v1+z.shift,z.v2+z.shift;
 whitelabel (btex $a$ etex,.5[z.u,z.v0]);
 whitelabel (btex $c$ etex,.5[z.u,z.w1]);
 whitelabel (btex $c$ etex,.5[z.u,z.w2]);
-whitelabel (btex $b+s$ etex shifted (6,4) rotated angle(z.v0-z.w1), .5[z.w1,z.v0]+(0,1));
-whitelabel (btex $b+t$ etex shifted (6,0) shifted -center btex $b+t$ etex rotated angle(z.w2-z.v0),.6[z.w2,z.v0]);
+whitelabel (btex $b+\lambda$ etex shifted (6,5) rotated angle(z.v0-z.w1), .5[z.w1,z.v0]+(0,1));
+whitelabel (btex $b+\mu$ etex shifted (15,-1) shifted -center btex $b+\mu$ etex rotated angle(z.w2-z.v0),.6[z.w2,z.v0]);
 whitelabel (btex $L$ etex,.5[z.w1,z.w2]);
 whitelabel (btex $c$ etex,.5[z.u,z.w0]+z.shift);
 whitelabel (btex $a$ etex,.5[z.u,z.v1]+z.shift);
 whitelabel (btex $a$ etex,.5[z.u,z.v2]+z.shift);
-whitelabel (btex $b+s$ etex shifted (3,0) shifted -center btex $b+s$ etex rotated angle(z.w0-z.v1),.5[z.v1,z.w0]+z.shift);
-whitelabel (btex $b+t$ etex shifted (3,-1) shifted -center btex $b+t$ etex rotated angle(z.w0-z.v2),.5[z.v2,z.w0]+z.shift);
+whitelabel (btex $b+\lambda$ etex shifted (3,0) shifted -center btex $b+\lambda$ etex rotated angle(z.w0-z.v1),.5[z.v1,z.w0]+z.shift);
+whitelabel (btex $b+\mu$ etex shifted (3,-2) shifted -center btex $b+\mu$ etex rotated angle(z.w0-z.v2),.5[z.v2,z.w0]+z.shift);
 whitelabel (btex $\ell$ etex,.5[z.v1,z.v2]+z.shift);
 
 label.bot (btex $u$ etex,z.u);
@@ -333,7 +333,7 @@ label.lft (btex $w_1$ etex,z.w1);
 label.urt (btex $w_2$ etex,z.w2);
 label.llft (btex $v$ etex,z.v0);
 label.lft (btex $v_1$ etex,z.v1+z.shift);
-label.rt (btex $v_2$ etex,z.v2+z.shift);
+label.rt (btex $v_2$ etex,z.v2+z.shift+(0,-2));
 
 endfig;
 
